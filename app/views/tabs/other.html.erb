@@ -10,7 +10,6 @@ div.tab {
 }
 
 div.tab button {
-    overflow: hidden;
     background-color: inherit;
     float: left;
     border: none;
@@ -39,9 +38,10 @@ div.tab button.active {
 </head>
 <body>
   
-<h1 id = "header"> Testing tabs </h1>
+<h1> I'm another page</h1>
 
 <div class="tab">
+  <button class="tablinks" onclick="changeText(event, 'Admin')" id="AdminTab"> Admin </button>
   <button class="tablinks" onclick="changeText(event, 'First')" id="defaultOpen"> First </button>
   <button class="tablinks" onclick="changeText(event, 'Second')"> Second </button>
   <button class="tablinks" onclick="changeText(event, 'Third')"> Third </button>
@@ -61,7 +61,12 @@ div.tab button.active {
   <h3>Third</h3>
   <p>This is the third tab.</p>
   
-  <button><a href="/tabs/other">Another Page</a></button>
+  <button><a href="/tabs/test">Back to the first page</a></button>
+</div>
+
+<div id="Admin" class="tabcontent">
+  <h3>Admin</h3>
+  <p>This is the admin tab.</p>
 </div>
 
 <script>
@@ -81,5 +86,6 @@ function changeText(evt, number) {
 
 document.getElementById("defaultOpen").click();
 </script>
+     
 </body>
 </html> 
