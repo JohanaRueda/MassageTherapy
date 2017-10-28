@@ -2,7 +2,6 @@
 <html>
 <head>
 <style>
-
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -16,13 +15,14 @@ div.tab button {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 14px 50px;
     transition: 0.3s;
     font-size: 17px;
 }
 
 div.tab button:hover {
     background-color: #ff0000;
+    opacity: 0.8;
 }
 
 div.tab button.active {
@@ -35,6 +35,16 @@ div.tab button.active {
     border: 1px solid #808080;
     border-top: none;
 }
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
 </style>
 </head>
 <body>
@@ -42,26 +52,42 @@ div.tab button.active {
 <h1 id = "header"> Testing tabs </h1>
 
 <div class="tab">
-  <button class="tablinks" onclick="changeText(event, 'First')" id="defaultOpen"> First </button>
-  <button class="tablinks" onclick="changeText(event, 'Second')"> Second </button>
-  <button class="tablinks" onclick="changeText(event, 'Third')"> Third </button>
+  <button class="tablinks" onclick="changeText(event, 'Home')" id="defaultOpen"> Home </button>
+  <button class="tablinks" onclick="changeText(event, 'Courses')"> Courses </button>
+  <button class="tablinks" onclick="changeText(event, 'Contact Us')"> Contact Us </button>
+  <button class="tablinks" onclick="changeText(event, 'Log In')"> Log In </button>
 </div>
 
-<div id="First" class="tabcontent">
-  <h3>First</h3>
+<div id="Home" class="tabcontent">
+  <h3>Home Page</h3>
   <p>This is the first tab.</p>
 </div>
 
-<div id="Second" class="tabcontent">
-  <h3>Second</h3>
+<div id="Courses" class="tabcontent">
+  <h3>Courses</h3>
   <p>This is the second tab.</p>
 </div>
 
-<div id="Third" class="tabcontent">
-  <h3>Third</h3>
+<div id="Contact Us" class="tabcontent">
+  <h3>Contact Us</h3>
   <p>This is the third tab.</p>
   
   <button><a href="/tabs/other">Another Page</a></button>
+</div>
+
+<div id="Log In" class="tabcontent">
+  <h3>Log In</h3>
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br>
+    <button type="submit" margin="auto">Login</button>
+    <br><br>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
 </div>
 
 <script>
