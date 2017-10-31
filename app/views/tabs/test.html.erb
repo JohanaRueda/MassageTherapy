@@ -1,56 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-div.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #0000ff;
-}
 
-div.tab button {
-    overflow: hidden;
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 50px;
-    transition: 0.3s;
-    font-size: 17px;
-}
-
-div.tab button:hover {
-    background-color: #ff0000;
-    opacity: 0.8;
-}
-
-div.tab button.active {
-    background-color: #00ff00;
-}
-
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #808080;
-    border-top: none;
-}
-
-input[type=text], input[type=password] {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-</style>
 </head>
 <body>
-  
-<h1 id = "header"> Testing tabs </h1>
-
+    
 <div class="tab">
   <button class="tablinks" onclick="changeText(event, 'Home')" id="defaultOpen"> Home </button>
   <button class="tablinks" onclick="changeText(event, 'Courses')"> Courses </button>
@@ -86,7 +40,7 @@ input[type=text], input[type=password] {
     <br>
     <button type="submit" margin="auto">Login</button>
     <br><br>
-    <input type="checkbox" checked="checked"> Remember me
+    <!--<input type="checkbox" checked="checked"> Remember me-->
   </div>
 </div>
 
