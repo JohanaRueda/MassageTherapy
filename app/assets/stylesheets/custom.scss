@@ -53,7 +53,7 @@ p {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 15px; //9
   font-weight: bold;
 }
 
@@ -172,10 +172,20 @@ div.tab button.active {
     background-color: #808080;
 }
 
-
 .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #808080;
     border-top: none;
+}
+
+input {
+    width: 25%;
+}
+
+button.course {
+  height: 100px;
+  width: 100px;
+  padding: 10px 10px;
+  margin: 10px;
 }

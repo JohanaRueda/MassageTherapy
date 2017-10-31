@@ -15,18 +15,23 @@
 <div id="Home" class="tabcontent">
   <h3>Home Page</h3>
   <p>This is the first tab.</p>
+  <button><a href="/tabs/other">Another Page</a></button>
 </div>
 
 <div id="Courses" class="tabcontent">
   <h3>Courses</h3>
-  <p>This is the second tab.</p>
+  <button class="course"> <%= link_to "Course 1", test_path %> </button>
+  <button class="course"> Course 2</button>
+  <button class="course"> Course 3</button>
+  <br>
+  <button class="course"> Course 4</button>
+  <button class="course"> Course 5</button>
+  <button class="course"> Course 6</button>
 </div>
 
 <div id="Contact Us" class="tabcontent">
   <h3>Contact Us</h3>
   <p>This is the third tab.</p>
-  
-  <button><a href="/tabs/other">Another Page</a></button>
 </div>
 
 <div id="Log In" class="tabcontent">
@@ -41,6 +46,10 @@
     <button type="submit" margin="auto">Login</button>
     <br><br>
     <!--<input type="checkbox" checked="checked"> Remember me-->
+    <br><br>
+    <a href="/tabs/other"><u>Sign up</u></a> <br>
+    <a href="/tabs/other"><u>Forgot Password</u></a> <br>
+    <a href="/tabs/other"><u>Admin Log-in</u></a>
   </div>
 </div>
 
