@@ -4,10 +4,10 @@
 
 </head>
 <body>
-    
+
 <div class="tab">
-  <button class="tablinks" onclick="changeText(event, 'Home')" id="defaultOpen"> Home </button>
-  <button class="tablinks" onclick="changeText(event, 'Courses')"> Courses </button>
+  <button class="tablinks" onclick="changeText(event, 'Home')"> Home </button>
+  <button class="tablinks" onclick="changeText(event, 'Courses')" id="defaultOpen"> Courses </button>
   <button class="tablinks" onclick="changeText(event, 'Contact Us')"> Contact Us </button>
   <button class="tablinks" onclick="changeText(event, 'Log In')"> Log In </button>
 </div>
@@ -15,18 +15,12 @@
 <div id="Home" class="tabcontent">
   <h3>Home Page</h3>
   <p>This is the first tab.</p>
-  <button><a href="/tabs/other">Admin Page</a></button>
+  <button><a href="/tabs/other">Another Page</a></button>
 </div>
 
 <div id="Courses" class="tabcontent">
-  <h3>Courses</h3>
-  <button class="course"> <a href="/tabs/course1">Course 1</a> </button>
-  <button class="course"> Course 2</button>
-  <button class="course"> Course 3</button>
-  <br>
-  <button class="course"> Course 4</button>
-  <button class="course"> Course 5</button>
-  <button class="course"> Course 6</button>
+    <button class="course"> <a href="/tabs/course1">Course 1</a> </button>
+    <p>COURSE PAGE FILLER</p>
 </div>
 
 <div id="Contact Us" class="tabcontent">
@@ -36,7 +30,6 @@
 
 <div id="Log In" class="tabcontent">
   <h3>Log In</h3>
-  <form action="/action_page.php">
   <div class="container">
     <label><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
@@ -46,13 +39,12 @@
     <br>
     <button type="submit" margin="auto">Login</button>
     <br><br>
-    <input type="checkbox" checked="checked"> Remember me
+    <!--<input type="checkbox" checked="checked"> Remember me-->
     <br><br>
     <a href="/tabs/other"><u>Sign up</u></a> <br>
     <a href="/tabs/other"><u>Forgot Password</u></a> <br>
     <a href="/tabs/other"><u>Admin Log-in</u></a>
   </div>
-  </form>
 </div>
 
 <script>

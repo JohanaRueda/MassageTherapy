@@ -131,9 +131,7 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
-  /*@include box_sizing;*/
 }
 
 input {
@@ -177,10 +175,6 @@ div.tab button.active {
     padding: 6px 12px;
     border: 1px solid #808080;
     border-top: none;
-}
-
-input {
-    width: 25%;
 }
 
 button.course {
