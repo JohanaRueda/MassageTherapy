@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #0000ff;
+}
+
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+div.tab button:hover {
+    background-color: #ff0000;
+}
+
+div.tab button.active {
+    background-color: #00ff00;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #808080;
+    border-top: none;
+}
+</style>
+</head>
+<body>
+  
+<h1> I'm another page</h1>
+
+<div class="tab">
+  <button class="tablinks" onclick="changeText(event, 'Admin')" id="AdminTab"> Admin </button>
+  <button class="tablinks" onclick="changeText(event, 'First')" id="defaultOpen"> First </button>
+  <button class="tablinks" onclick="changeText(event, 'Second')"> Second </button>
+  <button class="tablinks" onclick="changeText(event, 'Third')"> Third </button>
+</div>
+
+<div id="First" class="tabcontent">
+  <h3>First</h3>
+  <p>This is the first tab.</p>
+</div>
+
+<div id="Second" class="tabcontent">
+  <h3>Second</h3>
+  <p>This is the second tab.</p>
+</div>
+
+<div id="Third" class="tabcontent">
+  <h3>Third</h3>
+  <p>This is the third tab.</p>
+  
+  <button><a href="/tabs/test">Back to the first page</a></button>
+</div>
+
+<div id="Admin" class="tabcontent">
+  <h3>Admin</h3>
+  <p>This is the admin tab.</p>
+</div>
+
+<script>
+function changeText(evt, number) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(number).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+</script>
+     
+</body>
+</html> 
