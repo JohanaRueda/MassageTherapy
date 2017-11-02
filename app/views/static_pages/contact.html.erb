@@ -1,6 +1,40 @@
-<% provide(:title, 'Contact') %>
-<h1>Contact</h1>
-<p>
-  Contact the Ruby on Rails Tutorial about the sample app at the
-  <a href="http://www.railstutorial.org/contact">contact page</a>.
-</p>
+<!DOCTYPE html>
+<html>
+  <head></head>
+<body>
+    
+<div class="tab">
+  <button class="tablinks" id="homeTab" onclick="changeTab('home_path')"> Home </button>
+  <button class="tablinks" id="coursesTab"> Courses </button>
+  <button class="tablinks" id="contactTab"> Contact Us </button>
+  <button class="tablinks" id="loginTab"> Log In </button>
+</div>
+
+<script>
+//function changeText(evt, number) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById("Contact").style.display = "block";
+    document.getElementById("contactTab") += " active";
+//}
+
+function changeTab(path) {
+  var = '"/' + path + '"';
+  <a href=path> test </a>
+}
+</script>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact Us</h3>
+  <p>TO BE COMPLETED</p>
+</div>
+
+</body>
+</html> 

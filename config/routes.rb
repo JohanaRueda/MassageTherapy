@@ -3,10 +3,9 @@ Rails.application.routes.draw do
  #root 'application#hello'
  get "/tabs/:tab" => "tabs#show"
 
- get  '/test',    to: 'static_pages#home'
- get  '/help',    to: 'static_pages#help'
- get  '/about',   to: 'static_pages#about'
+ get  '/home',    to: 'static_pages#home'
+ get  '/courses',    to: 'static_pages#courses'
  get  '/contact', to: 'static_pages#contact'
- get  '/course1', to: 'tabs#course1#show'
+ get  '/login',   to: 'static_pages#login'
  root "tabs#show", tab: "test"
 end
