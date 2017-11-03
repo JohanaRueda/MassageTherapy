@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/new'
+   
+  resources :users
+  #get 'users/new'
 
  #root 'application#hello'
- get "/tabs/:tab" => "tabs#show"
- root "tabs#show", tab: "test"
+ #get "/tabs/:tab" => "tabs#show"
+ #root "tabs#show", tab: "test"
 end
