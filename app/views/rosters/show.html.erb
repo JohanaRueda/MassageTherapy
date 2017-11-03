@@ -1,0 +1,9 @@
+<h2>Roster <%= @roster.id %></h2>
+
+<ul id="details">
+  <li>User ID: <%= @roster.user_id %></li>
+  <li>Offering ID: <%= @roster.offering_id %></li>
+</ul>
+
+<%= button_to 'Delete', roster_path(@roster), :method => :delete, :confirm => 'Are you sure?' %>
+<%=link_to 'Back to roster list', rosters_path %>
