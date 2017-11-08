@@ -183,3 +183,18 @@ button.course {
   padding: 10px 10px;
   margin: 10px;
 }
+
+a.prettyLink {
+  opacity: 1;
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+  background-color: none;
+}
+a.prettyLink:link, a.prettyLink:visited, a.prettyLink:hover, a.prettyLink:active {
+  opacity: inherit;
+  font: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  background-color: inherit;
+}

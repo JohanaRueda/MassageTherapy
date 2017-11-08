@@ -7,7 +7,7 @@
 <div class="tab">
   <button class="tablinks" onclick="changeText(event, 'Home')" id="defaultOpen"> Home </button>
   <button class="tablinks" onclick="changeText(event, 'Courses')"> Courses </button>
-  <button class="tablinks" onclick="changeText(event, 'Contact Us')"> Contact Us </button>
+  <button class="tablinks" onclick="changeText(event, 'Contact Us')"><a class="prettyLink" href="/static_pages/home"> Contact Us </a> Contact Us </button>
   <button class="tablinks" onclick="changeText(event, 'Log In')"> Log In </button>
 </div>
 
@@ -68,6 +68,10 @@ function changeText(evt, number) {
     }
     document.getElementById(number).style.display = "block";
     evt.currentTarget.className += " active";
+    
+    if(number == "Contact Us") {
+        
+    }
 }
 
 document.getElementById("defaultOpen").click();

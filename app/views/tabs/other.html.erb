@@ -1,37 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-
-</head>
+<head></head>
 <body>
-
+    
+<!-- OPTION: the tabs can be changed into static pages for organization purposes -->
 <div class="tab">
   <button class="tablinks" onclick="changeText(event, 'Admin')" id="AdminTab"> Admin </button>
-  <button class="tablinks" onclick="changeText(event, 'First')" id="defaultOpen"> First </button>
-  <button class="tablinks" onclick="changeText(event, 'Second')"> Second </button>
-  <button class="tablinks" onclick="changeText(event, 'Third')"> Third </button>
+  <button class="tablinks" onclick="changeText(event, 'Home')"> Home </button>
+  <button class="tablinks" onclick="changeText(event, 'Courses')"> Courses </button>
+  <button class="tablinks" onclick="changeText(event, 'Contact Us')" id="defaultOpen"> Contact Us </button>
+  <button class="tablinks" onclick="changeText(event, 'Log In')"> Log In </button>
 </div>
 
-<div id="First" class="tabcontent">
-  <h3>First</h3>
+<div id="Home" class="tabcontent">
+  <h3>Home Page</h3>
   <p>This is the first tab.</p>
+  <button><a href="/tabs/test">Admin Page</a></button>
 </div>
 
-<div id="Second" class="tabcontent">
-  <h3>Second</h3>
-  <p>This is the second tab.</p>
+<div id="Courses" class="tabcontent">
+  <h3>Courses</h3>
+  <!-- These buttons would call a function from the Course handler -->
+  <button class="course"> <a href="/tabs/other">Course 1</a> </button>
+  <button class="course"> Course 2</button>
+  <button class="course"> Course 3</button>
+  <br>
+  <button class="course"> Course 4</button>
+  <button class="course"> Course 5</button>
+  <button class="course"> Course 6</button>
 </div>
 
-<div id="Third" class="tabcontent">
-  <h3>Third</h3>
+<div id="Contact Us" class="tabcontent">
+  <h3>Contact Us</h3>
   <p>This is the third tab.</p>
 </div>
 
-<div id="Admin" class="tabcontent">
-  <h3>Admin</h3>
-  <p>This is the admin tab.</p>
-  
-  <button><a href="/tabs/test">Back to the first page</a></button>
+<div id="Log In" class="tabcontent">
+  <h3>Log In</h3>
+  <form action="/action_page.php">
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br>
+    <button type="submit" margin="auto">Login</button>
+    <br><br>
+    <input type="checkbox" checked="checked"> Remember me
+    <br><br>
+    <a href="/tabs/other"><u>Sign up</u></a> <br>
+    <a href="/tabs/other"><u>Forgot Password</u></a> <br>
+    <a href="/tabs/other"><u>Admin Log-in</u></a>
+  </div>
+  </form>
 </div>
 
 <script>
@@ -51,6 +73,5 @@ function changeText(evt, number) {
 
 document.getElementById("defaultOpen").click();
 </script>
-     
 </body>
 </html> 
