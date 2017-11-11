@@ -4,27 +4,23 @@
 <body>
     
 <div class="tab">
-  <button class="tablinks"><a href="/home"> Home </a></button>
-  <button class="tablinks" id="defaultOpen"><a href="/courses"> Courses </a></button>
-  <button class="tablinks"><a href="/contact"> Contact Us </a></button>
-  <button class="tablinks"><a href="/login"> Log In </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
+  <button class="tablinks active"><a class="prettyLink" href="/static_pages/courses"> Courses </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
 </div>
 
-<script>
-  document.getElementById("defaultOpen").click();
-</script>
-
-<div id="Courses" class="tabcontent">
+<div id="Courses" display="block">
   <h3>Courses</h3>
   
   <!-- These buttons would call a function from the Course handler -->
-  <button class="course"> <a href="/tabs/other">Course 1</a> </button>
-  <button class="course"> Course 2</button>
-  <button class="course"> Course 3</button>
+  <button class="course"> <a href="/static_pages/home">Course 1</a> </button>
+  <button class="course"> <a href="/static_pages/home">Course 2</a></button>
+  <button class="course"> <a href="/static_pages/home">Course 3</a></button>
   <br>
-  <button class="course"> Course 4</button>
-  <button class="course"> Course 5</button>
-  <button class="course"> Course 6</button>
+  <button class="course"> <a href="/static_pages/home">Course 4</a></button>
+  <button class="course"> <a href="/static_pages/home">Course 5</a></button>
+  <button class="course"> <a href="/static_pages/home">Course 6</a></button>
 </div>
 
 </body>

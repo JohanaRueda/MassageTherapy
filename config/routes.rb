@@ -10,6 +10,9 @@ Rails.application.routes.draw do
  get  '/login',   to: 'static_pages#login'
  
  get 'static_pages/home'
+ get 'static_pages/courses'
+ get 'static_pages/contact'
+ get 'static_pages/login'
 
  get "/tabs/:tab" => "tabs#show"
  root "tabs#show", tab: "test"

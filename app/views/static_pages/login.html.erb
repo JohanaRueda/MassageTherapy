@@ -4,18 +4,14 @@
 <body>
     
 <div class="tab">
-  <button class="tablinks"><a href="/home"> Home </a></button>
-  <button class="tablinks"><a href="/courses"> Courses </a></button>
-  <button class="tablinks"><a href="/contact"> Contact Us </a></button>
-  <button class="tablinks" id="defaultOpen"><a href="/login"> Log In </a></button>
+   <button class="tablinks"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/courses"> Courses </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
+  <button class="tablinks active" id="defaultOpen"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
 </div>
 
-<script>
-  document.getElementById("defaultOpen").click();
-</script>
-
 <!-- No functionality; just aesthetic -->
-<div id="Log In" class="tabcontent">
+<div id="Log In" display="block">
   <h3>Log In</h3>
   <form action="/action_page.php">
   <div class="container">
@@ -35,6 +31,10 @@
   </div>
   </form>
 </div>
+
+<script>
+  document.getElementById("defaultOpen").click();
+</script>
 
 </body>
 </html> 

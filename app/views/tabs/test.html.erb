@@ -5,16 +5,16 @@
     
 <!-- OPTION: the tabs can be changed into static pages for organization purposes -->
 <div class="tab">
-  <button class="tablinks" onclick="changeText(event, 'Home')" id="defaultOpen"> Home </button>
-  <button class="tablinks" onclick="changeText(event, 'Courses')"> Courses </button>
-  <button class="tablinks" onclick="changeText(event, 'Contact Us')"><a class="prettyLink" href="/static_pages/home"> Contact Us </a> Contact Us </button>
-  <button class="tablinks" onclick="changeText(event, 'Log In')"> Log In </button>
+  <button class="tablinks active" onclick="changeText(event, 'Home')" id="defaultOpen"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
+  <button class="tablinks" onclick="changeText(event, 'Courses')"><a class="prettyLink" href="/static_pages/courses"> Courses </a></button>
+  <button class="tablinks" onclick="changeText(event, 'Contact Us')"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
+  <button class="tablinks" onclick="changeText(event, 'Log In')"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
 </div>
 
-<div id="Home" class="tabcontent">
+<div id="Home" display="block">
   <h3>Home Page</h3>
   <p>This is the first tab.</p>
-  <button><a href="/tabs/other">Admin Page</a></button>
+  <!--<button><a href="/tabs/other">Admin Page</a></button>-->
 </div>
 
 <div id="Courses" class="tabcontent">
@@ -56,7 +56,7 @@
 </div>
 
 <script>
-function changeText(evt, number) {
+/*function changeText(evt, number) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -68,11 +68,7 @@ function changeText(evt, number) {
     }
     document.getElementById(number).style.display = "block";
     evt.currentTarget.className += " active";
-    
-    if(number == "Contact Us") {
-        
-    }
-}
+}*/
 
 document.getElementById("defaultOpen").click();
 </script>
