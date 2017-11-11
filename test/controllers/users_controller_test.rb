@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-<<<<<<< HEAD
   setup do
     @user = users(:one)
   end
@@ -46,11 +45,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to users_url
   end
-=======
   test "should get new" do
     get users_new_url
     assert_response :success
   end
 
->>>>>>> 2aa709b3c34b9c3ea13513c356d06320ba63260b
 end

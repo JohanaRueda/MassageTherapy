@@ -1,5 +1,4 @@
 module UsersHelper
-<<<<<<< HEAD
 
   # Returns the Gravatar for the given user.
   def gravatar_for(user)
@@ -8,6 +7,3 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
 end
-=======
-end
->>>>>>> 2aa709b3c34b9c3ea13513c356d06320ba63260b
