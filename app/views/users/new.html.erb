@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
 
@@ -20,3 +21,17 @@
     <% end %>
   </div>
 </div>
+=======
+Enter new User Information: <br />
+<%= form_for User.new do |f| -%>
+    Name: <%= f.text_field :name %> <br />
+    Email: <%= f.text_field :email %> <br />
+    Phone: <%= f.text_field :phone %> <br />
+    Address:<%= f.text_field :address %> <br />
+    Admin:<%= f.text_field :admin %> <br />
+    License:<%= f.text_field :license %> <br />
+    Password:<%= f.text_field :password %> <br />
+    Confirm Password:<%= f.text_field :password_confirmation %> <br />
+    <%= f.submit %>
+<% end -%>
+>>>>>>> 2aa709b3c34b9c3ea13513c356d06320ba63260b

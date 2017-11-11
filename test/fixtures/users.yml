@@ -1,5 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+<<<<<<< HEAD
 one:
   name: MyString
   email: MyString
@@ -7,3 +8,5 @@ one:
 two:
   name: MyString
   email: MyString
+=======
+>>>>>>> 2aa709b3c34b9c3ea13513c356d06320ba63260b
