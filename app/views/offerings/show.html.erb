@@ -1,0 +1,11 @@
+<h2>Offering <%= @offering.id %></h2>
+
+<ul id="details">
+  <li>Course ID: <%= @offering.course_id %></li>
+  <li>Date: <%= @offering.courseDate %></li>
+  <li>Price: <%= @offering.coursePrice %></li>
+  <li>Notes: <%= @offering.courseNotes %></li>
+</ul>
+
+<%= button_to 'Delete', offering_path(@offering), :method => :delete, :confirm => 'Are you sure?' %>
+<%=link_to 'Back to offerings', offerings_path %> 

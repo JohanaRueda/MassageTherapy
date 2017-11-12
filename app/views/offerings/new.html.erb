@@ -1,0 +1,8 @@
+<h1>Enter new course offering details:</h1>
+<%= form_for Offering.new do |f| -%>
+    Course ID: <%= f.text_field :course_id %> <br />
+    Date: <%= f.text_field :courseDate %> <br />
+    Price: <%= f.text_field :coursePrice %> <br />
+    Notes: <%= f.text_field :courseNotes %> <br />
+    <%= f.submit %>
+<% end -%>

@@ -1,0 +1,26 @@
+<h1>Offerings</h1>
+
+<table id="offerings">
+  <thead>
+  <tr>
+    <th>Offering ID</th>
+    <th>Date</th>
+    <th>Notes</th>
+    <th>Price</th>
+    <th>Course ID</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @offerings.each do |offering| %>
+      <tr>
+        <td><%= offering.id %></td>
+        <td><%= offering.courseDate  %></td>
+        <td><%= offering.courseNotes %></td>
+        <td><%= offering.coursePrice %></td>
+        <td><%= offering.course_id   %></td>
+        <td><%= link_to "Details", offering_path(offering) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add new offering', new_offering_path %>

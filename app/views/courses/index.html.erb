@@ -12,8 +12,9 @@
    <% @courses.each do |course| %>
        <tr>
          <td><%= course.id %></td>
-         <td><%= course.courseName  %></td>
+         <td><%= course.courseName %></td>
          <td><%= course.courseDesc %></td>
+         <td><%= link_to "Offerings", offering_path(course.id) %></td>
        </tr>
    <% end %>
    </tbody>
