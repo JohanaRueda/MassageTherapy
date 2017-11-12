@@ -1,7 +1,45 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  
+  # ROUTING
+  def home
+    case
+      when user.admin
+        admin_pages_active_courses
+      else
+        static_pages_home
+    end
+  end
+  
+  def courses
+    case
+      when user.admin
+        admin_pages_active_courses
+      else
+        static_pages_courses
+    end
+  end
+  
+  def contact
+    case
+      when user.admin
+        admin_pages_active_courses
+      else
+        static_pages_contact
+    end
+  end
+  
+  def login
+    case
+      when user.admin
+        admin_pages_active_courses
+      else
+        static_pages_login
+    end
+  end
+  # END ROUTING
+  
+  
   # GET /users
   # GET /users.json
   def index
@@ -73,25 +111,16 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
-=======
-  def new
-    @user= User.new
-  end
-  
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      flash[:success] = "Welcome " + @user.name 
-      redirect_to @user
-    end
-  end
-  
-  def show
-    @user = User.find(params[:id])
-  end
+    
+  #def create
+  #  @user = User.new(user_params)
+  #  if @user.save
+  #    flash[:success] = "Welcome " + @user.name 
+  #    redirect_to @user
+  #  end
+  #end
   
   def user_params
       params.require(:user).permit(:name, :email,:phone, :address, :admin, :license, :password,:password_confirmation)
   end
->>>>>>> 2aa709b3c34b9c3ea13513c356d06320ba63260b
 end
