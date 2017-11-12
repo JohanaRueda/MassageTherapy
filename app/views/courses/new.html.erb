@@ -1,0 +1,6 @@
+<h1>Enter new course details:</h1>
+<%= form_for Course.new do |f| -%>
+    Course Name: <%= f.text_field :courseName %> <br />
+    Course Description: <%= f.text_field :courseDesc %> <br />
+    <%= f.submit %>
+<% end -%>
