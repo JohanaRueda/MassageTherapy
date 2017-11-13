@@ -20,7 +20,7 @@
 <!-- OPTION: the tabs can be changed into static pages for organization purposes -->
 <div class="tab">
   <button class="tablinks active"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
-  <button class="tablinks" ><a class="prettyLink" href="/static_pages/courses"> Courses </a></button>
+  <button class="tablinks"><%= link_to "Courses", courses_path, class: "prettyLink" %></button>
   <button class="tablinks"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
   <button class="tablinks"><a class="prettyLink" href="/sessions/new"> Log In </a></button>
 </div>

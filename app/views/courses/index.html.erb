@@ -1,23 +1,17 @@
-<h1>Courses</h1>
- 
- <table id="courses">
-   <thead>
-   <tr>
-     <th>Course ID</th>
-     <th>Course Name</th>
-     <th>Description</th>
-   </tr>
-   </thead>
-   <tbody>
-   <% @courses.each do |course| %>
-       <tr>
-         <td><%= course.id %></td>
-         <td><%= course.courseName %></td>
-         <td><%= course.courseDesc %></td>
-         <td><%= link_to "Details", courses_path(course) %></td>
-         <!--<td><%= link_to "Offerings", offering_path(course.id) %></td>-->
-       </tr>
-   <% end %>
-   </tbody>
- </table>
- <%= link_to 'Add new course', new_course_path %>
+<div class="tab">
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
+  <button class="tablinks active"><%= link_to "Courses", courses_path, class: "prettyLink" %></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
+</div>
+
+<div id="Courses" class="tabcontent">
+  <h3>Courses</h3>
+
+  <% @courses.each_with_index do |course, i| %>
+      <button class="course"><%= link_to course.courseName, course_path(course) %></button>
+      <% if i % 3 == 2 %>
+          <br>
+      <% end %>
+  <% end %>
+</div>

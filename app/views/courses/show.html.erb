@@ -1,9 +1,30 @@
-<h2>Course <%= @course.id %></h2>
+<div class="tab">
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
+  <button class="tablinks"><%= link_to "Courses", courses_path, class: "prettyLink" %></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
+</div>
 
-<ul id="details">
-  <li>Course Name: <%= @course.courseName %></li>
-  <li>Description: <%= @course.courseDesc %></li>
-</ul>
+<div id="Course" class="tabcontent">
+  <h3><%= @course.courseName %></h3>
 
-<%= button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?' %>
-<%=link_to 'Back to list of courses', courses_path %> 
+  <table id="offerings">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Notes</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @offerings.each do |offering| %>
+          <tr>
+            <td><%= offering.courseDate %></td>
+            <td><%= offering.courseNotes %></td>
+            <td><%= offering.coursePrice %></td>
+            <td><%= link_to "Register", course_path(@course) %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
