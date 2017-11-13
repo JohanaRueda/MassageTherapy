@@ -1,0 +1,22 @@
+<h1>Rosters</h1>
+
+<table id="rosters">
+  <thead>
+  <tr>
+    <th>Roster ID</th>
+    <th>User ID</th>
+    <th>Offering ID</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @rosters.each do |roster| %>
+      <tr>
+        <td><%= roster.id %></td>
+        <td><%= roster.user_id  %></td>
+        <td><%= roster.offering_id %></td>
+        <td><%= link_to "Details", roster_path(roster) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add new roster', new_roster_path %>

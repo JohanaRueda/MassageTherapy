@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+<body>
+    
+<div class="tab">
+   <button class="tablinks"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/courses"> Courses </a></button>
+  <button class="tablinks"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
+  <button class="tablinks active" id="defaultOpen"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
+</div>
+
+<!-- No functionality; just aesthetic -->
+<div id="Log In" class="tabcontent">
+  <h3>Log In</h3>
+  <form action="/action_page.php">
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+    <br>
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br>
+    <button type="submit" margin="auto">Login</button>
+    <br><br>
+    <input type="checkbox" checked="checked"> Remember me
+    <br><br>
+    <a href="/users/new"><u>Sign up</u></a> <br>
+    <!--<a href="/tabs/other"><u>Forgot Password</u></a> <br>
+    <a href="/tabs/other"><u>Admin Log-in</u></a>-->
+  </div>
+  </form>
+</div>
+
+<script>
+  document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html> 
