@@ -13,6 +13,7 @@ class OfferingsController < ApplicationController
 
   def create
     @offering = Offering.new(offering_params)
+    # TODO: make dates work
     if @offering.save
       flash[:success] = "Added new offering for course " + @offering.course_id + " on " + @offering.courseDate
       redirect_to @offering
