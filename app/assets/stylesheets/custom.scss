@@ -138,9 +138,6 @@ input {
   height: auto !important;
 }
 
-
-/* TEST */
-
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
@@ -159,6 +156,7 @@ div.tab button {
     padding: 14px 50px;
     transition: 0.3s;
     font-size: 17px;
+    width: 25%;
 }
 
 div.tab button:hover {

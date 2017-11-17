@@ -3,15 +3,14 @@ Rails.application.routes.draw do
   resources :rosters
   resources :courses
   resources :offerings
-  
+ 
  get  '/home',    to: 'static_pages#home'
  get  '/courses',    to: 'static_pages#courses'
  get  '/contact', to: 'static_pages#contact'
- 
- get '/admin_active', to: 'admin_pages#active_courses'
- get '/admin_add', to: 'admin_pages#add_course'
- get '/admin_edit', to: 'admin_pages#delete_course'
- get '/admin_delete', to: 'admin_pages#edit_course'
+ get  '/admin_active', to: 'admin_pages#active_courses'
+ get  '/admin_add', to: 'admin_pages#add_course'
+ get  '/admin_edit', to: 'admin_pages#delete_course'
+ get  '/admin_delete', to: 'admin_pages#edit_course'
  
  get    '/signup',  to: 'users#new'
  get    '/login',   to: 'sessions#new'

@@ -5,10 +5,10 @@
     
 <!-- OPTION: the tabs can be changed into static pages for organization purposes -->
 <div class="tab">
-  <button class="tablinks"><a class="prettyLink" href="/admin_pages/active_courses"> Active Courses </a></button>
-  <button class="tablinks active" ><a class="prettyLink" href="/admin_pages/add_course"> Add Course </a></button>
-  <button class="tablinks"><a class="prettyLink" href="/admin_pages/edit_course"> Edit Course </a></button>
-  <button class="tablinks"><a class="prettyLink"  href="/admin_pages/delete_course"> Delete Course </a></button>
+  <button class="tablinks"><%= link_to "Active Courses", admin_active_path, class: "prettyLink" %></button>
+  <button class="tablinks active"><%= link_to "Add Course", admin_add_path, class: "prettyLink" %></button>
+  <button class="tablinks"><%= link_to "Edit Course", admin_edit_path, class: "prettyLink" %></button>
+  <button class="tablinks"><%= link_to "Delete Course", admin_delete_path, class: "prettyLink" %></button>
 </div>
 
 <div id="Add" class="tabcontent">
