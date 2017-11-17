@@ -1,45 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   
-  # ROUTING
-  def home
-    case
-      when user.admin
-        admin_pages_active_courses
-      else
-        static_pages_home
-    end
-  end
-  
-  def courses
-    case
-      when user.admin
-        admin_pages_active_courses
-      else
-        static_pages_courses
-    end
-  end
-  
-  def contact
-    case
-      when user.admin
-        admin_pages_active_courses
-      else
-        static_pages_contact
-    end
-  end
-  
-  def login
-    case
-      when user.admin
-        admin_pages_active_courses
-      else
-        static_pages_login
-    end
-  end
-  # END ROUTING
-  
-  
   # GET /users
   # GET /users.json
   def index
@@ -68,6 +29,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        log_in @user
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else

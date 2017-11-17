@@ -12,8 +12,15 @@
 </div>
 
 <div id="Active" class="tabcontent">
-  <h3>Home Page</h3>
+  <h3>Active Tab</h3>
   <p>This is the first tab.</p>
+  <% if logged_in? %>
+      <tr>
+        <td><%= current_user.name %></td>
+        <td><%= current_user.email %></td>
+        <td><%= current_user.admin %></td>
+      </tr>
+  <% end %>
 </div>
 
 </body>

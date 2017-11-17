@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
+  
   def new
   end
   
@@ -14,5 +16,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
+    log_out
+    redirect_to root_path
   end
 end

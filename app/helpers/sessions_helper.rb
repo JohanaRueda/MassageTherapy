@@ -4,6 +4,11 @@ module SessionsHelper
         session[:user_id] = user.id
     end
     
+    def log_out
+        session.delete(:user_id)
+        @current_user = nil
+    end
+    
     #Returns the current logged-in user (if any).
     # ||= allows for nil or right-hand side
     def current_user
@@ -13,5 +18,12 @@ module SessionsHelper
     #Returns true if the user is logged in, false otherwise.
     def logged_in?
         !current_user.nil?
+    end
+    
+    #Returns true if current_user is admin
+    def admin?
+        if logged_in?
+            current_user.admin
+        end
     end
 end

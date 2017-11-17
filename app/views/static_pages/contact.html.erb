@@ -7,7 +7,7 @@
   <button class="tablinks"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
   <button class="tablinks"><a class="prettyLink" href="/static_pages/courses"> Courses </a></button>
   <button class="tablinks active" id="defaultOpen"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
-  <button class="tablinks"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
+  <button class="tablinks"><%= link_to "Log In", login_path, method: :get, class: "prettyLink" %></button>
 </div>
 
 <div id="Contact" class="tabcontent">
