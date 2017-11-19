@@ -11,6 +11,6 @@ class User < ApplicationRecord
     validates :phone, presence: true, length: { minimum: 10 }, format: { with: VALID_PHONE_REGEX }
     
     validates :address, presence: true
-    validates :admin, presence: true
+    # validates :admin, presence: true
     validates :license, length: { minimum: 8 }
 end

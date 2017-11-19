@@ -1,9 +1,9 @@
 <div>
-  <span class="h3">Enter new course details:</span>
+  <span class="h3">Update course details:</span>
 </div>
 <br>
 
-<%= form_for Course.new do |f| %>
+<%= form_for @course do |f| %>
     <div class="form-group">
       <%= f.label :courseName, "Course Name:" %>
       <%= f.text_field :courseName, class: "form-control" %>
@@ -13,5 +13,5 @@
       <%= f.text_field :courseDesc, class: "form-control" %>
     </div>
 
-    <%= f.submit "Submit", class: "btn btn-default" %>
+    <%= f.submit "Save Changes", class: "btn btn-default" %>
 <% end %>

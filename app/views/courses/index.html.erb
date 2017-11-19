@@ -1,17 +1,16 @@
-<div class="tab">
-  <button class="tablinks"><a class="prettyLink" href="/static_pages/home"> Home </a></button>
-  <button class="tablinks active"><%= link_to "Courses", courses_path, class: "prettyLink" %></button>
-  <button class="tablinks"><a class="prettyLink" href="/static_pages/contact"> Contact Us </a></button>
-  <button class="tablinks"><a class="prettyLink" href="/static_pages/login"> Log In </a></button>
+<div>
+  <span class="h2">Courses</span>
 </div>
+<br>
 
-<div id="Courses" class="tabcontent">
-  <h3>Courses</h3>
+<% @courses.each_with_index do |course, i| %>
+    <%= link_to course_path(course), class: 'btn btn-default btn-lg btn-course', role: 'button' do %>
+        <span><%= course.courseName %></span>
+    <% end %>
+<% end %>
 
-  <% @courses.each_with_index do |course, i| %>
-      <button class="course"><%= link_to course.courseName, course_path(course) %></button>
-      <% if i % 3 == 2 %>
-          <br>
-      <% end %>
-  <% end %>
-</div>
+<% if admin? %>
+    <%= link_to new_course_path, class: 'btn btn-default btn-primary btn-lg btn-course', role: 'button' do %>
+        <span>Add New Course</span>
+    <% end %>
+<% end %>

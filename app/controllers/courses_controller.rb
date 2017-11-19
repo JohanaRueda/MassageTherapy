@@ -22,6 +22,19 @@ class CoursesController < ApplicationController
     @offerings = Offering.where(course_id: params[:id])
   end
 
+  def edit
+    @course = Course.find(params[:id])
+  end
+
+  def update
+    @course = Course.find(params[:id])
+    if @course.update_attributes(course_params)
+      redirect_to course_path(@course)
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @course = Course.find(params[:id])
     @course.destroy

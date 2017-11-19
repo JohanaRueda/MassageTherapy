@@ -196,3 +196,15 @@ a.prettyLink:link, a.prettyLink:visited, a.prettyLink:hover, a.prettyLink:active
   color: inherit;
   background-color: inherit;
 }
+
+.btn-course {
+  display: inline-flex;
+  height: 100px;
+  width: 150px;
+  margin-right: 10px;
+  white-space: normal;
+
+  span {
+    margin: auto;
+  }
+}
