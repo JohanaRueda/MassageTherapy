@@ -4,6 +4,7 @@ class AdminPagesController < ApplicationController
 
   # ROUTING
   def active_courses
+    @courses = Course.all
   end
 
   def add_course

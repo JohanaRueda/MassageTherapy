@@ -2,7 +2,7 @@
 <html>
 <head></head>
 <body>
-    
+
 <div class="tab">
   <button class="tablinks active"><%= link_to "Active Courses", admin_active_path, class: "prettyLink" %></button>
   <button class="tablinks"><%= link_to "Add Course", admin_add_path, class: "prettyLink" %></button>
@@ -11,27 +11,27 @@
 </div>
 
 <div id="Active" class="tabcontent">
-  <table>
-  <!--<thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>-->
-<tbody>
-    <% @courses.each do |course| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= course.courseName %></td>
-        <td><%= course.course_id %></td>
-        <td><%= course.courseDesc %></td>
+        <th>#</th>
+        <th>Course Name</th>
+        <th>Course Description</th>
       </tr>
-    <% end %>
-  </tbody>
-  
-</table>
-  
-  
+    </thead>
+    <tbody>
+      <% @courses.each do |course| %>
+          <tr>
+            <td><%= course.id %></td>
+            <td><%= course.courseName %></td>
+            <td><%= course.courseDesc %></td>
+          </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+
   <h3>Active Tab</h3>
   <p>This is the first tab.</p>
   <% if logged_in? %>
