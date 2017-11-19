@@ -1,30 +1,25 @@
 class AdminPagesController < ApplicationController
   include SessionsHelper
-  
+  before_action :check_admin
+
   # ROUTING
   def active_courses
-    if !admin?
-      redirect_to home_path
-    end
   end
-  
+
   def add_course
-    if !admin?
-      redirect_to home_path
-    end
   end
-  
+
   def edit_course
-    if !admin?
-      redirect_to home_path
-    end
   end
-  
+
   def delete_course
-    if !admin?
-      redirect_to home_path
-    end
   end
+
   # END ROUTING
-  
+
+  private
+
+  def check_admin
+    redirect_to home_path unless admin?
+  end
 end
