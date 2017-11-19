@@ -27,5 +27,9 @@ Rails.application.routes.draw do
  get 'admin_pages/delete_course'
  get 'admin_pages/edit_course'
  
+ get 'courses/index'
+ get 'courses/new'
+ get 'courses/show'
+ 
  root 'static_pages#home'
 end

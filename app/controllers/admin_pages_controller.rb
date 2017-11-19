@@ -1,5 +1,6 @@
 class AdminPagesController < ApplicationController
   include SessionsHelper
+  include CoursesHelper
   
   # ROUTING
   def active_courses
