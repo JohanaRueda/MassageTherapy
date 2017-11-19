@@ -1,14 +1,12 @@
 class CoursesController < ApplicationController
-  def course_params
-    params.require(:course).permit(:courseName, :courseDesc)
-  end
-
+  public 
   def index
     @courses = Course.all
   end
 
   def new
     # default: render 'new' template
+    @course = Course.new
   end
 
   def create
@@ -30,4 +28,9 @@ class CoursesController < ApplicationController
     flash[:notice] = "Course '#{@course.id}' deleted."
     redirect_to courses_path
   end
+  
+  private
+    def course_params
+      params.require(:course).permit(:courseName, :courseDesc)
+    end
 end
