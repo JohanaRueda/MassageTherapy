@@ -1,26 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<div>
+    <span class="h2">Users</span>
+</div>
+<br>
 
-<table>
+<table id="offerings" class="table">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+  </tr>
   </thead>
-
   <tbody>
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to "View Profile", user %>
+          |
+          <%= link_to "Edit User", edit_user_path(user) %>
+          |
+          <%= link_to "Delete User", user, method: :delete, data: {confirm: "Are you sure you want to delete this user?"} %>
+        </td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

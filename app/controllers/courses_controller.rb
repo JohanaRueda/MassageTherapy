@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  public 
+  public
   def index
     @courses = Course.all
   end
@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      flash[:success] = "Created new course " + @course.courseName.to_s
+      flash[:success] = "Created new course '#{@course.courseName}'"
       redirect_to @course
     end
   end
@@ -20,6 +20,10 @@ class CoursesController < ApplicationController
   def show
     @course = Course.find(params[:id])
     @offerings = Offering.where(course_id: params[:id])
+    if session[:user_id]
+      @registered_offering_ids = Roster.where(user_id: session[:user_id], offering_id: @offerings).pluck(:offering_id)
+      print @registered_offering_ids
+    end
   end
 
   def edit
@@ -41,9 +45,9 @@ class CoursesController < ApplicationController
     flash[:notice] = "Course '#{@course.id}' deleted."
     redirect_to courses_path
   end
-  
+
   private
-    def course_params
-      params.require(:course).permit(:courseName, :courseDesc)
-    end
+  def course_params
+    params.require(:course).permit(:courseName, :courseDesc)
+  end
 end
