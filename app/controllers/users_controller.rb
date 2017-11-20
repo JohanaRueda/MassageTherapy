@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  include SessionsHelper
   
   # GET /users
   # GET /users.json
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.admin = false
   end
 
   # GET /users/1/edit

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/admin_delete', to: 'admin_pages#delete_course'
 
   get '/signup', to: 'users#new'
+  post '/signup', to: 'users#create'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
@@ -20,8 +21,10 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/courses'
   get 'static_pages/contact'
-  #get 'static_pages/login'
+  
   get 'users/new'
+  get 'users/edit'
+  
   get 'admin_pages/active_courses'
   get 'admin_pages/add_course'
   get 'admin_pages/delete_course'
