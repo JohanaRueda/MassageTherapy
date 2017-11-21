@@ -13,22 +13,19 @@
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
       
-      <%= f.label :phone, "Confirmation" %>
-      <%= f.password_field :phone, class: 'form-control' %>
+      <%= f.label :phone, "Phone" %>
+      <%= f.text_field :phone, class: 'form-control' %>
       
-      <%= f.label :address, "Confirmation" %>
-      <%= f.password_field :address, class: 'form-control' %>
+      <%= f.label :address, "Address" %>
+      <%= f.text_field :address, class: 'form-control' %>
       
-      <%= f.label :admin, "Confirmation" %>
-      <%= f.password_field :admin, class: 'form-control' %>
-      
-      <%= f.label :license, "Confirmation" %>
-      <%= f.password_field :license, class: 'form-control' %>
+      <%= f.label :license, "License" %>
+      <%= f.text_field :license, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "Password" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "Password Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
