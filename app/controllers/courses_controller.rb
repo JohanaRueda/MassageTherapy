@@ -24,6 +24,8 @@ class CoursesController < ApplicationController
       @registered_offering_ids = Roster.where(user_id: session[:user_id], offering_id: @offerings).pluck(:offering_id)
       print @registered_offering_ids
     end
+    
+    @users = User.all
   end
 
   def edit
