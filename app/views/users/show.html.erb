@@ -1,25 +1,69 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h3>
   <%= @user.name %>
-</p>
+</h3>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+<div class="profile">
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+  
+  <p>
+    <strong>Phone:</strong>
+    <%= @user.phone %>
+  </p>
+  
+  <p>
+    <strong>Address:</strong>
+    <%= @user.address %>
+  </p>
+  
+  <p>
+    <strong>License:</strong>
+    <%= @user.license %>
+  </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
-
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+<%= link_to 'Edit Your Profile', edit_user_path(@user) %>
 </div>
+
+<br>
+
+<% if !admin? %>
+  <h4>Active Courses</h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Date</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+  <tbody>
+  <% @courses.each do |course| %>
+    <% @course_id = course.id %>
+    <% @offerings.each do |offering| %>
+      <% if @course_id == offering.course_id %>
+        <% if session[:user_id] %> 
+          <% if @registered_offering_ids.include? offering.id %>
+          <tr>
+            <td><%= course.courseName %></td>
+            <td><%= offering.courseDate %></td>
+            <td><%= course.courseDesc %></td>
+          </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  </tbody>
+  </table>
+  
+  <h4>Past Courses</h4>
+  <h5>To be filled out</h5>
+  <h5>Will repeat the above with an if-statement checking the day
+  https://www.tutorialspoint.com/ruby/ruby_date_time.htm
+  </h5>
+  
+<% end %>

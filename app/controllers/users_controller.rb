@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   include SessionsHelper
+  include CoursesHelper
   
   # GET /users
   # GET /users.json
@@ -12,6 +13,11 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @courses = Course.all
+    @offerings = Offering.all
+    if session[:user_id]
+      @registered_offering_ids = Roster.where(user_id: session[:user_id], offering_id: @offerings).pluck(:offering_id)
+    end
   end
 
   # GET /users/new
@@ -76,14 +82,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email)
     end
-    
-  #def create
-  #  @user = User.new(user_params)
-  #  if @user.save
-  #    flash[:success] = "Welcome " + @user.name 
-  #    redirect_to @user
-  #  end
-  #end
   
   def user_params
       params.require(:user).permit(:name, :email,:phone, :address, :admin, :license, :password,:password_confirmation)
