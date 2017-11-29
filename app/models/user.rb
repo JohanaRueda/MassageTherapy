@@ -15,7 +15,7 @@ class User < ApplicationRecord
     validates :license, length: { minimum: 8 }
     
     def self.to_csv
-        attributes= %w{ id name email admin}
+        attributes= %w{ id name email password admin}
         CSV.generate(headers: true) do |csv|
             csv << attributes
             all.each do |user|
