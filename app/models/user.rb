@@ -13,4 +13,15 @@ class User < ApplicationRecord
     validates :address, presence: true
     # validates :admin, presence: true
     validates :license, length: { minimum: 8 }
+    
+    def self.to_csv
+        attributes= %w{ id name email admin}
+        CSV.generate(headers: true) do |csv|
+            csv << attributes
+            all.each do |user|
+                csv << user.attributes.values_at(*attributes)
+            end
+        end
+    end
+
 end
