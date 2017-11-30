@@ -1,17 +1,17 @@
 <div>
-  <span class="h3">Enter new course details:</span>
+  <span class="h3">Ingrese nuevos detalles de clase:</span>
 </div>
 <br>
 
 <%= form_for Course.new do |f| %>
     <div class="form-group">
-      <%= f.label :courseName, "Course Name:" %>
+      <%= f.label :courseName, "Nombre de la Clase:" %>
       <%= f.text_field :courseName, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :courseDesc, "Course Description:" %>
+      <%= f.label :courseDesc, "Descripción de la Clase:" %>
       <%= f.text_field :courseDesc, class: "form-control" %>
     </div>
 
-    <%= f.submit "Submit", class: "btn btn-default" %>
+    <%= f.submit "Enviar", class: "btn btn-default" %>
 <% end %>

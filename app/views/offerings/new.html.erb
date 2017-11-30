@@ -1,28 +1,28 @@
 <div>
-  <span class="h3">Enter new course offering details:</span>
+  <span class="h3">Ingrese nuevos detalles de ofrenda de clase:</span>
 </div>
 <br>
 
 <%= form_for Offering.new do |f| %>
     <div class="form-group">
-      <%= f.label :course_id, "Course #:" %>
+      <%= f.label :course_id, "Clase #:" %>
       <%= f.text_field :course_id, class: "form-control", readonly: true, value: @course_id %>
     </div>
     <div class="form-group">
-      <%= f.label :courseDate, "Offering Date:" %>
+      <%= f.label :courseDate, "Fecha de Ofrenda:" %>
       <%= f.datetime_select :courseDate, class: "form-control" %>
     </div>
     <div class="form-group">
-      <%= f.label :coursePrice, "Offering Price:" %>
+      <%= f.label :coursePrice, "Precio de Ofrenda:" %>
       <div class="input-group">
         <span class="input-group-addon">$</span>
         <%= f.text_field :coursePrice, class: "form-control" %>
       </div>
     </div>
     <div class="form-group">
-      <%= f.label :courseNotes, "Offering Notes:" %>
+      <%= f.label :courseNotes, "Notas de Ofrenda:" %>
       <%= f.text_field :courseNotes, class: "form-control" %>
     </div>
 
-    <%= f.submit "Submit", class: "btn btn-default" %>
+    <%= f.submit "Enviar", class: "btn btn-default" %>
 <% end %>
