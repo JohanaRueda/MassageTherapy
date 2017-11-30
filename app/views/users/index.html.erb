@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <div>
-    <span class="h2">Users</span>
+    <span class="h2">Usuarios</span>
 </div>
 <br>
 
 <table id="offerings" class="table">
   <thead>
   <tr>
-    <th>Name</th>
+    <th>Nombre</th>
     <th>Email</th>
     <th></th>
   </tr>
@@ -19,11 +19,11 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td>
-          <%= link_to "View Profile", user %>
+          <%= link_to "Ver Usuario", user %>
           |
-          <%= link_to "Edit User", edit_user_path(user) %>
+          <%= link_to "Editar Usuario", edit_user_path(user) %>
           |
-          <%= link_to "Delete User", user, method: :delete, data: {confirm: "Are you sure you want to delete this user?"} %>
+          <%= link_to "Borrar Usuario", user, method: :delete, data: {confirm: "Estas seguro de borrar este usuario con toda su informacion?"} %>
         </td>
       </tr>
   <% end %>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Nuevo Usuario', new_user_path %>

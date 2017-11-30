@@ -11,28 +11,28 @@
   </p>
 
   <p>
-    <strong>Phone:</strong>
+    <strong>Telefono:</strong>
     <%= @user.phone %>
   </p>
 
   <p>
-    <strong>Address:</strong>
+    <strong>Direccion:</strong>
     <%= @user.address %>
   </p>
 
   <p>
-    <strong>License:</strong>
+    <strong>Licencia:</strong>
     <%= @user.license %>
   </p>
 
-  <%= link_to 'Edit Your Profile', edit_user_path(@user) %>
+  <%= link_to 'Editar tu profile', edit_user_path(@user) %>
 </div>
 
 <br>
 
 <% unless @user.admin? %>
     <div class="panel panel-default">
-      <div class="panel-heading">Active Courses</div>
+      <div class="panel-heading">Lista de clases activas</div>
       <table class="table">
         <thead>
         <tr>
@@ -54,7 +54,7 @@
     </div>
 
     <div class="panel panel-default">
-      <div class="panel-heading">Past Courses</div>
+      <div class="panel-heading">Lista clases tomadas</div>
       <table class="table">
         <thead>
         <tr>

@@ -13,7 +13,7 @@
 <br>
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Ofrendas de Clase</div>
+  <div class="panel-heading">Clases</div>
 
   <table id="offerings" class="table">
     <thead>
@@ -25,7 +25,7 @@
         <% if admin? %>
             Admin
         <% else %>
-            Registro
+            Registracion
         <% end %>
       </th>
     </tr>
@@ -38,9 +38,9 @@
           <td><%= number_to_currency(offering.coursePrice) %></td>
           <td>
             <% if admin? %>
-                <%= link_to "Editar Ofrenda", edit_offering_path(offering) %>
+                <%= link_to "Editar clase", edit_offering_path(offering) %>
                 |
-                <%= link_to "Eliminar Ofrenda", offering, method: :delete, data: {confirm: "¿Seguro que quieres eliminar esta ofrenda?"} %>
+                <%= link_to "Eliminar clase", offering, method: :delete, data: {confirm: "¿Seguro que quieres eliminar esta ofrenda?"} %>
             <% elsif session[:user_id] %>
                 <% if @registered_offering_ids.include? offering.id %>
                     Te has registrado para esta ofrenda de curso.
