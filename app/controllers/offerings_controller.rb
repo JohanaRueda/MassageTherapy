@@ -16,7 +16,7 @@ class OfferingsController < ApplicationController
     @offering = Offering.new(offering_params)
     # TODO: make dates work
     if @offering.save
-      flash[:success] = "Added new offering for course '#{@offering.course_id}' on '#{@offering.courseDate}'"
+      flash[:success] = "Clase agregada exitosamente '#{@offering.course_id}' on '#{@offering.courseDate}'"
       redirect_to course_path(@offering.course_id)
     end
   end
@@ -41,7 +41,7 @@ class OfferingsController < ApplicationController
   def destroy
     @offering = Offering.find(params[:id])
     @offering.destroy
-    flash[:notice] = "Offering '#{@offering.id}' deleted."
+    flash[:notice] = "Clase '#{@offering.id}' borrada."
     redirect_to course_path(@offering.course_id)
   end
 end
