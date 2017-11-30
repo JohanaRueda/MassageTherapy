@@ -1,5 +1,5 @@
 <div>
-  <span class="h1">Clases</span>
+  <span class="h1">Descripción de las clases</span>
 </div>
 <div class= "Neuromuscular&Prenatal">
     <%= image_tag("nmnatal.png", width: '1100px', align: 'center') %>
@@ -14,7 +14,9 @@
     <%= image_tag("drenaje.png", width: '1100px', align: 'center') %>
 </div>
 <br>
-
+<div>
+  <span class="h1">Horiario de Clases</span>
+</div>
 <% @courses.each_with_index do |course, i| %>
     <%= link_to course_path(course), class: 'btn btn-default btn-lg btn-course', role: 'button' do %>
         <span><%= course.courseName %></span>
