@@ -17,11 +17,9 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-    @courses = Course.all
-    @offerings = Offering.all
-    if session[:user_id]
-      @registered_offering_ids = Roster.where(user_id: session[:user_id], offering_id: @offerings).pluck(:offering_id)
-    end
+    @offering_ids = Roster.where(user_id: @user).pluck(:offering_id)
+    @active_offerings = Offering.where('id = ? AND courseDate >= ?', @offering_ids, Date.today)
+    @past_offerings = Offering.where('id = ? AND courseDate < ?', @offering_ids, Date.today)
   end
 
   # GET /users/new
