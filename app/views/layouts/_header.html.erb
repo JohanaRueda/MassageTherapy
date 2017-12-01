@@ -4,7 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Inicio", root_path %></li>
-        <li class="<%= 'active' if current_page?(courses_path) %>"><%= link_to "Clases", courses_path %></li>
+        <li class="<%= 'active' if current_page?(courses_path) %>"><%= link_to "Cursos", courses_path %></li>
         <% if admin? %>
             <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to "Usuarios", users_path %></li>
         <% end %>
