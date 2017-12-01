@@ -41,7 +41,7 @@ class OfferingsController < ApplicationController
   def destroy
     @offering = Offering.find(params[:id])
     @offering.destroy
-    flash[:notice] = "Clase '#{@offering.id}' borrada."
+    flash[:notice] = "Clase '#{@offering.courseDate}' borrada."
     redirect_to course_path(@offering.course_id)
   end
 end
