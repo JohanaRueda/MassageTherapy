@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# Form for Users
+#User.create!(name:  "Example User",
+#             email: "example@railstutorial.org",
+#             password:              "foobar",
+#             password_confirmation: "foobar",
+#             address: "foobar",
+#             phone: "8880001111",
+#             license: "12345678",
+#             admin:     false)
+
 User.create!(name:  "John Smith",
             email: "john.smith@gmail.com",
             password:              "password",
@@ -23,16 +33,15 @@ User.create!(name:  "Jane Smith",
             phone: "8880002222",
             license: "12341234",
             admin:     false)
-
-#User.create!(name:  "Example User",
-#             email: "example@railstutorial.org",
-#             password:              "foobar",
-#             password_confirmation: "foobar",
-#             address: "foobar",
-#             phone: "8880001111",
-#             license: "12345678",
-#             admin:     true)
-             
+            
+User.create!(name:  "Betty Avila",
+            email: "massagebgalhouse@gmail.com",
+            password:              "12345678",
+            password_confirmation: "12345678",
+            address: "foobar",
+            phone: "8880002222",
+            license: "12341234",
+            admin:     true)
 
 puts "Seed data goes here"
 #betty= User.create( name: 'Betty Ardila', email: 'massagebgalhouse@gmail.com', phone: '7135307789', address: '2243 silverside dr. Katy TX 77449', admin: 'true', password: '12345678')
