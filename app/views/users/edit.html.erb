@@ -34,6 +34,13 @@
           <%= f.label :password_confirmation, "Confirma tu Password" %>
           <%= f.password_field :password_confirmation, class: 'form-control' %>
         </div>
+        <% if admin? and current_user != @user %>
+            <div class="checkbox">
+              <label>
+                <%= f.check_box :admin %> Admin
+              </label>
+            </div>
+        <% end %>
         <%= f.submit "Guardar", class: "btn btn-primary" %>
     <% end %>
   </div>
