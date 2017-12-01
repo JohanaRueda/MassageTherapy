@@ -6,45 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Form for Users
-#User.create!(name:  "Example User",
-#             email: "example@railstutorial.org",
-#             password:              "foobar",
-#             password_confirmation: "foobar",
-#             address: "foobar",
-#             phone: "8880001111",
-#             license: "12345678",
-#             admin:     false)
 
-User.create!(name:  "John Smith",
-            email: "john.smith@gmail.com",
-            password:              "password",
-            password_confirmation: "password",
-            address: "foobar",
-            phone: "8880001111",
-            license: "12345678",
-            admin:     true)
-
-User.create!(name:  "Jane Smith",
-            email: "jane.smith@gmail.com",
-            password:              "password",
-            password_confirmation: "password",
-            address: "foobar",
-            phone: "8880002222",
-            license: "12341234",
-            admin:     false)
-            
-User.create!(name:  "Betty Avila",
+User.create!(name:  "Betty Ardila",
             email: "massagebgalhouse@gmail.com",
             password:              "12345678",
             password_confirmation: "12345678",
-            address: "foobar",
-            phone: "8880002222",
+            address: "2243 silverside dr. Katy TX 77449",
+            phone: "7135307789",
             license: "12341234",
             admin:     true)
 
 puts "Seed data goes here"
-#betty= User.create( name: 'Betty Ardila', email: 'massagebgalhouse@gmail.com', phone: '7135307789', address: '2243 silverside dr. Katy TX 77449', admin: 'true', password: '12345678')
 courses= Course.create([{courseName: 'Terapia Neuromuscular', courseDesc: 'Aprende sobre la técnica de la terapia neuromuscular! En esta clase estudiaremos el origen de esta terapia, el objetivo por la cual se practica, con sus efectos y beneficios. Aprenderás acerca de las técnicas de evaluación, la disfunción neuromuscular, los cinco elementos causantes del dolor, y por ultimo todas las técnicas neuromusculares.'},
 {courseName: 'Masaje prenatal', courseDesc:'Esta técnica es muy utilizada hoy en día, y definitivamente esta es una clase donde vas a aprender mucho! En esta clase haremos una introduccion a la terapia del masaje prenatal, estudiaremos los objetivos, y la importancia de este masaje. Estudiaremos las precauciones, y contraindicaciones. Y por ultimo estudiaremos los tipis de masaje prenatal.'},
 {courseName: 'Trigger Point', courseDesc:'Aprende sobre la técnica del Trigger point! En esta clase cubriremos los que es un Trigger Point y los tipos del punto gatillo. Estudiaremos las causas y sintomas de los puntos desencadenantes. Tambien estudiaremos las razones pare aplicar esta técnica, con todos sus beneficios. Por ultimo cubriremos los tratamientos post-disparo y las contraindicaciones. Esta es una clase muy completa en la cual vas a poder practicar todo lo que te enseñaremos.'},
