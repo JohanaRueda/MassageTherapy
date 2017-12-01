@@ -39,7 +39,7 @@
           <th>Course Name</th>
           <th>Date</th>
           <th>Time</th>
-          <th>Description</th>
+          <th>Notes</th>
         </tr>
         </thead>
         <tbody>
@@ -48,7 +48,7 @@
               <td><%= offering.course.courseName %></td>
               <td><%= offering.courseDate.strftime("%D") %></td>
               <td><%= offering.courseTime.strftime("%-I:%M %p") %></td>
-              <td><%= offering.course.courseDesc %></td>
+              <td><%= offering.courseNotes %></td>
             </tr>
         <% end %>
         </tbody>
@@ -63,7 +63,7 @@
           <th>Course Name</th>
           <th>Date</th>
           <th>Time</th>
-          <th>Description</th>
+          <th>Notes</th>
         </tr>
         </thead>
         <tbody>
@@ -72,7 +72,7 @@
               <td><%= offering.course.courseName %></td>
               <td><%= offering.courseDate.strftime("%D") %></td>
               <td><%= offering.courseTime.strftime("%-I:%M %p") %></td>
-              <td><%= offering.course.courseDesc %></td>
+              <td><%= offering.courseNotes %></td>
             </tr>
         <% end %>
         </tbody>
