@@ -25,6 +25,7 @@
     <thead>
     <tr>
       <th>Fecha</th>
+      <th>Hora</th>
       <th>Notas</th>
       <th>Precio</th>
       <th>
@@ -39,7 +40,8 @@
     <tbody>
     <% @offerings.each do |offering| %>
         <tr>
-          <td><%= offering.courseDate %></td>
+          <td><%= offering.courseDate.strftime("%D") %></td>
+          <td><%= offering.courseTime.strftime("%-I:%M %p") %></td>
           <td><%= offering.courseNotes %></td>
           <td><%= number_to_currency(offering.coursePrice) %></td>
           <td>
@@ -63,7 +65,7 @@
     <% if admin? %>
         <tfoot>
         <tr>
-          <td colspan="4" align="center">
+          <td colspan="5" align="center">
             <%= link_to "Agregar Nueva Ofrenda", new_offering_path(course_id: @course), class: 'btn btn-default btn-primary', role: 'button' %>
           </td>
         </tr>

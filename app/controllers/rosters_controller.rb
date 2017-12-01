@@ -15,7 +15,7 @@ class RostersController < ApplicationController
     @roster = Roster.new(roster_params)
     if @roster.save
       flash[:success] = "Registered user '#{@roster.user_id}' for course offering '#{@roster.offering_id}'"
-      redirect_to course_path(@roster.offering)
+      redirect_to course_path(@roster.offering.course_id)
     end
   end
 

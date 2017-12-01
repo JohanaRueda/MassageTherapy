@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 20171201193804) do
   end
 
   create_table "offerings", force: :cascade do |t|
-    t.datetime "courseDate"
+    t.date "courseDate"
+    t.time "courseTime"
     t.text "courseNotes"
     t.decimal "coursePrice"
     t.integer "course_id"
