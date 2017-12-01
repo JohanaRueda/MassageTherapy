@@ -16,9 +16,7 @@ class StaticPagesController < ApplicationController
   end
   
   def contact
-    if admin?
-      redirect_to admin_active_path
-    end
+
   end
   # END ROUTING
   

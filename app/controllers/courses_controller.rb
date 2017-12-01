@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      flash[:success] = "Created new course '#{@course.courseName}'"
+      flash[:success] = "Curso creado - '#{@course.courseName}'"
       redirect_to @course
     end
   end
@@ -44,7 +44,7 @@ class CoursesController < ApplicationController
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
-    flash[:notice] = "Course '#{@course.id}' deleted."
+    flash[:notice] = "Curso'#{@course.id}' borrado."
     redirect_to courses_path
   end
 
