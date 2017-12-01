@@ -8,15 +8,9 @@
 
 #betty= User.create( name: 'Betty Ardila', email: 'massagebgalhouse@gmail.com', phone: '7135307789', address: '2243 silverside dr. Katy TX 77449', admin: 'true', password: '12345678')
 
-User.create([{name:  "Betty Ardila",
-              email: "massagebgalhouse@gmail.com",
-              password:              "12345678",
-              password_confirmation: "12345678",
-              address: "2243 silverside dr. Katy TX 77449",
-              phone: "7135307789",
-              license: "12341234",
-              admin:     true},{name: 'Admin', email: 'admin@tamu.edu', phone: '5555555555', address: '123 Admin Rd', admin: true, license: '12345678', password: 'password'},
-             {name: 'User', email: 'user@tamu.edu', phone: '5555555555', address: '456 User Dr', admin: false, license: '12345678', password: 'password'}])
+User.create([{name: 'Betty Ardila', email: 'massagebgalhouse@gmail.com', address: '2243 silverside dr. Katy TX 77449', phone: '7135307789', license: '12341234', admin: true, password: '12345678'},
+             {name: 'Admin', email: 'admin@tamu.edu', phone: '5555555555', address: '123 Admin Rd', license: '12345678', admin: true, password: 'password'},
+             {name: 'User', email: 'user@tamu.edu', phone: '5555555555', address: '456 User Dr', license: '12345678', admin: false, password: 'password'}])
 
 Course.create([{courseName: 'Terapia Neuromuscular', courseDesc: 'Aprende sobre la técnica de la terapia neuromuscular! En esta clase estudiaremos el origen de esta terapia, el objetivo por la cual se practica, con sus efectos y beneficios. Aprenderás acerca de las técnicas de evaluación, la disfunción neuromuscular, los cinco elementos causantes del dolor, y por ultimo todas las técnicas neuromusculares.'},
                {courseName: 'Masaje prenatal', courseDesc: 'Esta técnica es muy utilizada hoy en día, y definitivamente esta es una clase donde vas a aprender mucho! En esta clase haremos una introduccion a la terapia del masaje prenatal, estudiaremos los objetivos, y la importancia de este masaje. Estudiaremos las precauciones, y contraindicaciones. Y por ultimo estudiaremos los tipis de masaje prenatal.'},
@@ -26,6 +20,3 @@ Course.create([{courseName: 'Terapia Neuromuscular', courseDesc: 'Aprende sobre 
                {courseName: 'Piedras Calientes', courseDesc: 'En esta clase estudiaremos la historia del masaje con piedras calientes. Estudiaremos el objetico principal de esta técnica y como fucniona. Estudiaremos los beneficios y contraindicaciones de esta practica. Y por ultimo estudiaremos como es una sesion con piedras calientes y practicaremos esta técnica.'},
                {courseName: 'Drenaje Linfatico', courseDesc: 'En esta clase estudiaremos un poco de la historia de esta técnica. estudiaremos como funciona este sistema, y cual es su funcion principal. Estudiaremos lo que son los ganglios linfaticos y miraremos las localizaciones de los ganglios en el cuerpo humano. Estudiaremos las técnicas del drenaje linfatico y por ultimo estudiaremos y practicaremos la secuencia del drenaje linfatico.'},
                {courseName: 'Masaje Reductivo', courseDesc: 'En esta clase estudiaremos la historia de esta técnica, los conceptos y hechos del masaje reductivo. Tambien estudiaremos las estrategias de esta técnica, como son la aparatologia y electro medicina aplicado a la estetica, la electroterapia, productos cosmeticos y los accessorios. Tambien estudiaremos las herramientas y técnicas para esta clase de masaje.'}])
-
-
-
