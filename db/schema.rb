@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130162649) do
+ActiveRecord::Schema.define(version: 20171201193804) do
 
   create_table "courses", force: :cascade do |t|
     t.string "courseName"
     t.text "courseDesc"
+    t.string "thumbnail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "thumbnail"
   end
 
   create_table "offerings", force: :cascade do |t|
-    t.date "courseDate"
+    t.datetime "courseDate"
     t.text "courseNotes"
     t.decimal "coursePrice"
     t.integer "course_id"
@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 20171130162649) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "phone"
-    t.boolean "address"
+    t.string "address"
     t.boolean "admin"
     t.string "license"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

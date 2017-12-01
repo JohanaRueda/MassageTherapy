@@ -1,7 +1,7 @@
 class CreateOfferings < ActiveRecord::Migration[5.1]
   def change
     create_table :offerings do |t|
-      t.date :courseDate
+      t.datetime :courseDate
       t.text :courseNotes
       t.decimal :coursePrice
       t.integer :course_id
