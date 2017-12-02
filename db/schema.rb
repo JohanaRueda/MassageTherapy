@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201193804) do
+ActiveRecord::Schema.define(version: 20171202012644) do
 
   create_table "courses", force: :cascade do |t|
     t.string "courseName"
@@ -45,8 +45,10 @@ ActiveRecord::Schema.define(version: 20171201193804) do
     t.string "address"
     t.boolean "admin"
     t.string "license"
+    t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
