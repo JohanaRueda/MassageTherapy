@@ -48,7 +48,7 @@ class User < ApplicationRecord
   end
   
   # Returns true if the given token matches the digest.
-  def authenticated?(remember_token)
+  def authenticated?(attribute, token)
     return false if remember_digest.nil?
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
@@ -72,7 +72,7 @@ class User < ApplicationRecord
   
   # Returns true if a password reset has expired.
   def password_reset_expired?
-    reset_sent_at < 2.hours.ago
+    reset_sent_at < 24.hours.ago
   end
   
 end

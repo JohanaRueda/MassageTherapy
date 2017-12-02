@@ -35,7 +35,19 @@ ActiveRecord::Schema.define(version: 20171202012644) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'migrate' for column 'db'
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "phone"
+    t.boolean "address"
+    t.boolean "admin"
+    t.string "license"
+    t.string "remember_digest"
+    t.datetime "reset_sent_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+  end
 
 end
