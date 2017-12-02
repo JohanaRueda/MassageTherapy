@@ -130,8 +130,8 @@ aside {
 /* forms */
 
 input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  margin-bottom: 15px;
+  //border: 1px solid #bbb;
+  //margin-bottom: 15px;
 }
 
 input {
@@ -139,40 +139,40 @@ input {
 }
 
 div.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #000000;
-    color: #ffffff;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 div.tab button {
-    overflow: hidden;
-    background-color: inherit;
-    color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 50px;
-    transition: 0.3s;
-    font-size: 17px;
-    width: 25%;
+  overflow: hidden;
+  background-color: inherit;
+  color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 50px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 25%;
 }
 
 div.tab button:hover {
-    background-color: #313639;
-    opacity: 0.8;
+  background-color: #313639;
+  opacity: 0.8;
 }
 
 div.tab button.active {
-    background-color: #808080;
+  background-color: #808080;
 }
 
 .tabcontent {
-    display: block; // none
-    padding: 6px 12px;
-    border: 1px solid #808080;
-    border-top: none;
+  display: block; // none
+  padding: 6px 12px;
+  border: 1px solid #808080;
+  border-top: none;
 }
 
 button.course {
@@ -189,6 +189,7 @@ a.prettyLink {
   color: inherit;
   background-color: none;
 }
+
 a.prettyLink:link, a.prettyLink:visited, a.prettyLink:hover, a.prettyLink:active {
   opacity: inherit;
   font: inherit;
@@ -197,15 +198,49 @@ a.prettyLink:link, a.prettyLink:visited, a.prettyLink:hover, a.prettyLink:active
   background-color: inherit;
 }
 
+.course-list {
+  text-align: center;
+
+  a {
+    margin: 10px 0;
+  }
+}
+
 .btn-course {
-  display: inline-flex;
-  height: 100px;
-  width: 150px;
-  margin-right: 10px;
+  //display: inline-flex;
+  //height: 100px;
+  //width: 150px;
+  //margin-right: 10px;
+  //white-space: normal;
+  //
+  //span {
+  //  margin: auto;
+  //}
+
+  text-align: left;
+  padding: 0;
+  border: none;
+  border-radius: 0;
   white-space: normal;
 
-  span {
-    margin: auto;
+  .media-body {
+    padding: 15px;
+  }
+
+  .media-left,
+  .media-right {
+    padding: 0;
+
+    img {
+      width: 300px;
+      height: 225px;
+      object-fit: cover;
+    }
+  }
+
+  .border {
+    min-width: 25px;
+    background-color: #87DFD5;
   }
 }
 
@@ -224,7 +259,22 @@ a.prettyLink:link, a.prettyLink:visited, a.prettyLink:hover, a.prettyLink:active
   }
 }
 
-
 div.profile {
   padding-left: 1cm;
 }
+
+
+.course-header {
+  .media-left {
+    padding-right: 15px;
+
+    img {
+      width: 300px;
+      height: 225px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  }
+}
+

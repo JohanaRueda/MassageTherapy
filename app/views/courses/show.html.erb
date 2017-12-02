@@ -1,14 +1,20 @@
-<div class="row">
-  <div class="col-sm-10">
-    <span class="h2"><%= @course.courseName %>
-      <small><%= @course.courseDesc %></small></span>
-  </div>
-  <% if admin? %>
-      <div class="col-sm-2" align="right">
-        <%= link_to "Editar Clase", edit_course_path(@course) %><br>
-        <%= link_to "Eliminar Clase", @course, method: :delete, data: {confirm: "¿Seguro que quieres eliminar esta clase?"} %>
+<div class="media course-header">
+  <% if @course.thumbnail? %>
+      <div class="media-left">
+        <%= image_tag(@course.thumbnail.url, alt: 'Thumbnail') %>
       </div>
   <% end %>
+  <div class="media-body">
+    <div class="media-heading">
+      <span class="h2"><%= @course.courseName %></span>
+      &nbsp;
+      <% if admin? %>
+          <%= link_to "Editar Curso", edit_course_path(@course) %>
+          |
+          <%= link_to "Eliminar Curso", @course, method: :delete, data: {confirm: "¿Seguro que quieres eliminar esta curso?"} %>
+      <% end %></div>
+    <span class="h2"><small><%= @course.courseDesc %></small></span>
+  </div>
 </div>
 <br>
 <div class="panel panel-default">
@@ -19,6 +25,7 @@
     <thead>
     <tr>
       <th>Fecha</th>
+      <th>Hora</th>
       <th>Notas</th>
       <th>Precio</th>
       <th>
@@ -33,7 +40,8 @@
     <tbody>
     <% @offerings.each do |offering| %>
         <tr>
-          <td><%= offering.courseDate %></td>
+          <td><%= offering.courseDate.strftime("%D") %></td>
+          <td><%= offering.courseTime.strftime("%-I:%M %p") %></td>
           <td><%= offering.courseNotes %></td>
           <td><%= number_to_currency(offering.coursePrice) %></td>
           <td>
@@ -57,8 +65,8 @@
     <% if admin? %>
         <tfoot>
         <tr>
-          <td colspan="4" align="center">
-            <%= link_to "Agregar Nueva Ofrenda", new_offering_path(course_id: @course), class: 'btn btn-default btn-primary', role: 'button' %>
+          <td colspan="5" align="center">
+            <%= link_to "Agregar Clase", new_offering_path(course_id: @course), class: 'btn btn-default btn-primary', role: 'button' %>
           </td>
         </tr>
         </tfoot>

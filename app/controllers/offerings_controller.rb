@@ -1,6 +1,6 @@
 class OfferingsController < ApplicationController
   def offering_params
-    params.require(:offering).permit(:courseDate, :courseNotes, :coursePrice, :course_id)
+    params.require(:offering).permit(:courseDate, :courseTime, :courseNotes, :coursePrice, :course_id)
   end
 
   def index
@@ -14,7 +14,8 @@ class OfferingsController < ApplicationController
 
   def create
     @offering = Offering.new(offering_params)
-    # TODO: make dates work
+    # @offering.courseDate = (@offering.courseDate.to_time - 6.hours).to_datetime
+
     if @offering.save
       flash[:success] = "Clase agregada exitosamente '#{@offering.course_id}' on '#{@offering.courseDate}'"
       redirect_to course_path(@offering.course_id)
@@ -41,7 +42,7 @@ class OfferingsController < ApplicationController
   def destroy
     @offering = Offering.find(params[:id])
     @offering.destroy
-    flash[:notice] = "Clase '#{@offering.id}' borrada."
+    flash[:notice] = "Clase '#{@offering.courseDate}' borrada."
     redirect_to course_path(@offering.course_id)
   end
 end

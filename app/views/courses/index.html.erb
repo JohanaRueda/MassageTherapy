@@ -1,30 +1,38 @@
 <div>
-  <span class="h1">Descripción de las clases</span>
+  <span class="h1">Cursos</span>
 </div>
-<div class= "Neuromuscular&Prenatal">
-    <%= image_tag("nmnatal.png", width: '1100px', align: 'center') %>
-</div>
-<div class= "triggerpointdeeptissue">
-    <%= image_tag("tpdt.png", width: '1100px', align: 'center') %>
-</div>
-<div class= "sports">
-    <%= image_tag("sports.png", width: '1100px', align: 'center') %>
-</div>
-<div class= "drenaje">
-    <%= image_tag("drenaje.png", width: '1100px', align: 'center') %>
-</div>
-<br>
-<div>
-  <span class="h1">Horiario de Clases</span>
-</div>
-<% @courses.each_with_index do |course, i| %>
-    <%= link_to course_path(course), class: 'btn btn-default btn-lg btn-course', role: 'button' do %>
-        <span><%= course.courseName %></span>
-    <% end %>
-<% end %>
+<div class="course-list">
+  <% @courses.each_with_index do |course, i| %>
+      <%= link_to course_path(course), class: 'btn btn-default btn-lg btn-course', role: 'button' do %>
+          <div class="media">
+            <% if i%2==0 %>
+                <div class="media-left">
+                  <%= image_tag(course.thumbnail? ? course.thumbnail.url : 'blank.png', alt: 'Thumbnail') %>
+                </div>
+            <% else %>
+                <div class="media-left border">
+                </div>
+            <% end %>
+            <div class="media-body">
+              <div class="h2 media-heading"><%= course.courseName %></div>
+              <%= course.courseDesc %>
+            </div>
+            <% if i%2==0 %>
+                <div class="media-right border">
+                </div>
+            <% else %>
+                <div class="media-right">
+                  <%= image_tag(course.thumbnail? ? course.thumbnail.url : 'blank.png', alt: 'Thumbnail') %>
+                </div>
+            <% end %>
+          </div>
+      <% end %>
 
-<% if admin? %>
-    <%= link_to new_course_path, class: 'btn btn-default btn-primary btn-lg btn-course', role: 'button' do %>
-        <span>Agregar Nueva Curso</span>
-    <% end %>
-<% end %>
+  <% end %>
+
+  <% if admin? %>
+      <%= link_to new_course_path, class: 'btn btn-default btn-primary btn-lg', role: 'button' do %>
+          <span>Agregar curso nuevo</span>
+      <% end %>
+  <% end %>
+</div>
