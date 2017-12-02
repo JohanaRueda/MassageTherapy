@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :rosters
   resources :courses
   resources :offerings
+  resources :charges, only: [:new, :create]
+  
 
   get '/home', to: 'static_pages#home'
   get '/courses', to: 'static_pages#courses'
@@ -21,6 +23,8 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/courses'
   get 'static_pages/contact'
+  
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
   
   get 'users/new'
   get 'users/edit'
