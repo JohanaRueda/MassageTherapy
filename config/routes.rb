@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :rosters
   resources :courses
   resources :offerings
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
   get '/home', to: 'static_pages#home'
   get '/courses', to: 'static_pages#courses'
