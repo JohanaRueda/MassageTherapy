@@ -13,9 +13,10 @@ class RostersController < ApplicationController
 
   def create
     @roster = Roster.new(roster_params)
+    
     if @roster.save
-      flash[:success] = "Registered user " + @roster.user_id.to_s + " for course offering " + @roster.offering_id.to_s
       @offering = Offering.find(@roster.offering_id)
+      flash[:success] = "Registered user " + @roster.user_id.to_s + " for course offering " + @roster.offering_id.to_s
       redirect_to course_path(@offering.course_id)
     end
   end
@@ -30,4 +31,9 @@ class RostersController < ApplicationController
     flash[:notice] = "Roster '#{@roster.id}' deleted."
     redirect_to rosters_path
   end
+  
+  private
+    def make_charge
+      
+    end
 end

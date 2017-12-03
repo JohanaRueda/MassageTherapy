@@ -45,7 +45,15 @@
                 <% if @registered_offering_ids.include? offering.id %>
                     Te has registrado para esta ofrenda de curso.
                 <% else %>
-                    <%= link_to "¡Pulse aquí para registrarse!", rosters_path(roster: {user_id: session[:user_id], offering_id: offering.id}), method: :post %>
+                    ¡Pulse aquí para registrarse y pagar!
+                    <%= form_tag charges_path do %>
+                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                          data-description="<%= @description %>"
+                          data-amount="<%= update_amount(offering.coursePrice*100, offering) %>"
+                          data-locale="auto"></script>
+                    <% end %>
+                    <!--<%= link_to "¡Pulse aquí para registrarse!", rosters_path(roster: {user_id: session[:user_id], offering_id: offering.id}), method: :post %>-->
                 <% end %>
             <% else %>
                 ¡Inicia sesión para registrarte!

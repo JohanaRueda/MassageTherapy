@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get 'static_pages/courses'
   get 'static_pages/contact'
   
-  get 'thanks', to: 'charges#thanks', as: 'thanks'
+  # get 'thanks', to: 'charges#thanks', as: 'thanks'
   
   get 'users/new'
   get 'users/edit'
