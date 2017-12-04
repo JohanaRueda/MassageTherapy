@@ -22,6 +22,5 @@
 
 .byebug_history
 
-
 # Ignore thumbnail uploads
 /public/uploads/course/thumbnail
