@@ -21,8 +21,8 @@ class UsersController < ApplicationController
     @active_offerings = []
     @past_offerings = []
     unless @offering_ids.empty?
-      @active_offerings = Offering.where("id IN (?) AND (courseDate > ? OR (courseDate = ? AND courseTime >= ?))", @offering_ids, Date.today, Date.today, Time.now.strftime("2000-01-01 %H:%M:00"))
-      @past_offerings = Offering.where("id IN (?) AND (courseDate < ? OR (courseDate = ? AND courseTime < ?))", @offering_ids, Date.today, Date.today, Time.now.strftime("2000-01-01 %H:%M:00"))
+      @active_offerings = Offering.where('id IN (?) AND ("courseDate" > ? OR ("courseDate" = ? AND "courseTime" >= ?))', @offering_ids, Date.today, Date.today, Time.now.strftime("2000-01-01 %H:%M:00"))
+      @past_offerings = Offering.where('id IN (?) AND ("courseDate" < ? OR ("courseDate" = ? AND "courseTime" < ?))', @offering_ids, Date.today, Date.today, Time.now.strftime("2000-01-01 %H:%M:00"))
     end
   end
 
