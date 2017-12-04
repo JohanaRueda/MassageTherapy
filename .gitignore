@@ -22,6 +22,7 @@
 
 .byebug_history
 
+# Ignore environment variables.
 .env
 
 # Ignore thumbnail uploads
