@@ -38,15 +38,17 @@
         <tr>
           <th>Course Name</th>
           <th>Date</th>
-          <th>Description</th>
+          <th>Time</th>
+          <th>Notes</th>
         </tr>
         </thead>
         <tbody>
         <% @active_offerings.each do |offering| %>
             <tr>
               <td><%= offering.course.courseName %></td>
-              <td><%= offering.courseDate %></td>
-              <td><%= offering.course.courseDesc %></td>
+              <td><%= offering.courseDate.strftime("%D") %></td>
+              <td><%= offering.courseTime.strftime("%-I:%M %p") %></td>
+              <td><%= offering.courseNotes %></td>
             </tr>
         <% end %>
         </tbody>
@@ -60,15 +62,17 @@
         <tr>
           <th>Course Name</th>
           <th>Date</th>
-          <th>Description</th>
+          <th>Time</th>
+          <th>Notes</th>
         </tr>
         </thead>
         <tbody>
         <% @past_offerings.each do |offering| %>
             <tr>
               <td><%= offering.course.courseName %></td>
-              <td><%= offering.courseDate %></td>
-              <td><%= offering.course.courseDesc %></td>
+              <td><%= offering.courseDate.strftime("%D") %></td>
+              <td><%= offering.courseTime.strftime("%-I:%M %p") %></td>
+              <td><%= offering.courseNotes %></td>
             </tr>
         <% end %>
         </tbody>

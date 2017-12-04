@@ -3,6 +3,7 @@ class CreateCourses < ActiveRecord::Migration[5.1]
     create_table :courses do |t|
       t.string :courseName
       t.text :courseDesc
+      t.string :thumbnail
 
       t.timestamps
     end

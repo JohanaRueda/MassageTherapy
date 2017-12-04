@@ -18,8 +18,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @offering_ids = Roster.where(user_id: @user).pluck(:offering_id)
-    @active_offerings = Offering.where('id = ? AND courseDate >= ?', @offering_ids, Date.today)
-    @past_offerings = Offering.where('id = ? AND courseDate < ?', @offering_ids, Date.today)
+    @active_offerings = Offering.where('id IN (?) AND (courseDate > ? OR (courseDate = ? AND courseTime >= ?))', @offering_ids, Date.today, Date.today, Time.now.strftime("2000-01-01 %H:%M:00"))
+    @past_offerings = Offering.where('id IN (?) AND (courseDate < ? OR (courseDate = ? AND courseTime < ?))', @offering_ids, Date.today, Date.today, Time.now.strftime("2000-01-01 %H:%M:00"))
   end
 
   # GET /users/new
@@ -41,6 +41,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
+        ExampleMailer.sample_email(@user).deliver
         format.html { redirect_to @user, notice: 'Usuario creado exitosamente.' }
         format.json { render :show, status: :created, location: @user }
       else

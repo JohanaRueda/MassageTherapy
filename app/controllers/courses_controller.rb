@@ -19,7 +19,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @offerings = Offering.where(course_id: params[:id])
+    @offerings = @course.offerings
     if session[:user_id]
       @registered_offering_ids = Roster.where(user_id: session[:user_id], offering_id: @offerings).pluck(:offering_id)
       print @registered_offering_ids
@@ -44,12 +44,12 @@ class CoursesController < ApplicationController
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
-    flash[:notice] = "Curso'#{@course.id}' borrado."
+    flash[:notice] = "Curso '#{@course.courseName}' borrado."
     redirect_to courses_path
   end
 
   private
   def course_params
-    params.require(:course).permit(:courseName, :courseDesc)
+    params.require(:course).permit(:courseName, :courseDesc, :thumbnail)
   end
 end
