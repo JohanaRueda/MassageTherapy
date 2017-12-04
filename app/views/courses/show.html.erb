@@ -57,10 +57,10 @@
                         ¡Pulse aquí para registrarse y pagar!
                         <input type="hidden" name="amount" value="<%= offering.coursePrice*100 %>">
                         <input type="hidden" name="offering_id" value="<%= offering.id %>">
-                        <input type="hidden" name="description" value="<%= @course.courseName %>">
+                        <input type="hidden" name="description" value="<%= @course.courseName %> (<%= offering.courseDate.strftime("%D") %> @ <%= offering.courseTime.strftime("%-I:%M %p") %>)">
                         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                                 data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                                data-description="<%= @course.courseName %>"
+                                data-description="<%= @course.courseName %> (<%= offering.courseDate.strftime("%D") %> @ <%= offering.courseTime.strftime("%-I:%M %p") %>)"
                                 data-amount="<%= offering.coursePrice*100 %>"
                                 data-locale="auto"></script>
                     <% end %>

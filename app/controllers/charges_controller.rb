@@ -10,9 +10,8 @@ class ChargesController < ApplicationController
     @roster = Roster.new(user_id: session[:user_id], offering_id: params[:offering_id])
 
     if @roster.save
-      @offering = Offering.find(@roster.offering_id)
-      flash[:success] = "Registered user " + @roster.user_id.to_s + " for course offering " + @roster.offering_id.to_s
-      redirect_to course_path(@offering.course_id)
+      flash[:success] = "Registered user '#{@roster.user_id}' for course offering '#{@roster.offering_id}'"
+      redirect_to course_path(@roster.offering.course_id)
     end
 
   rescue Stripe::CardError => e

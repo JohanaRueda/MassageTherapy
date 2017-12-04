@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :courses
   resources :offerings
   resources :charges, only: [:new, :create]
-  resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   get '/home', to: 'static_pages#home'
   get '/courses', to: 'static_pages#courses'
@@ -23,10 +23,10 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/courses'
   get 'static_pages/contact'
-  
+
   get 'users/new'
   get 'users/edit'
-  
+
   get 'admin_pages/active_courses'
   get 'admin_pages/add_course'
   get 'admin_pages/delete_course'
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   #get    '/contact',   to: 'contacts#new'
   #post   '/contact',   to: 'contacts#create'
-  match '/contact',     to: 'contacts#new',  via: 'get'
+  match '/contact', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
 
   root 'static_pages#home'

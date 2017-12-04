@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 20171202012644) do
     t.string "address"
     t.boolean "admin"
     t.string "license"
-    t.string "remember_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "remember_digest"
+    t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
