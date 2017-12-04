@@ -24,3 +24,6 @@
 
 # Ignore enviconment variables.
 .env
+
+# Ignore thumbnail uploads
+/public/uploads/course/thumbnail
