@@ -39,7 +39,7 @@ class PasswordResetsController < ApplicationController
   private
   
   def load_user_using_perishable_token
-    @user = User.where(perishable_token: params[:token])
+    @user = User.where(perishable_token: params[:token]).first
     unless @user
       flash[:error] = "Perdone, no podemos encontrar su cuenta."
       redirect_to root_url
