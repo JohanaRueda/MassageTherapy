@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171202012644) do
+ActiveRecord::Schema.define(version: 20171205014928) do
 
   create_table "courses", force: :cascade do |t|
     t.string "courseName"
@@ -50,7 +50,9 @@ ActiveRecord::Schema.define(version: 20171202012644) do
     t.string "remember_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.string "perishable_token", default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["perishable_token"], name: "index_users_on_perishable_token"
   end
 
 end

@@ -75,4 +75,11 @@ class User < ApplicationRecord
     reset_sent_at < 24.hours.ago
   end
   
+  def deliver_password_reset_instructions
+    self.perishable_token = SecureRandom.hex(4)
+    save(validate: false)
+
+    PasswordResetNotifier.password_reset_instructions(self).deliver_now
+  end
+  
 end
