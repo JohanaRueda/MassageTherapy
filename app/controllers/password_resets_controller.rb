@@ -24,14 +24,13 @@ class PasswordResetsController < ApplicationController
   
   def update
     load_user_using_perishable_token
-    @user = User.where(perishable_token: params[:token]).first
     
     if @user
       @user.password = params[:password]
       if @user.save
         flash[:success] = "Hemos cambiado su password exitosamente."
         #redirect_to @user
-        #log_in @user
+        log_in @user
       else
         render :edit
       end
