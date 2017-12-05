@@ -19,16 +19,6 @@ class PasswordResetsController < ApplicationController
       flash.now[:error] = "Dirección de email no existe"
       render :new
     end
-    #@user = User.find_by(email: params[:password_reset][:email].downcase)
-    #if @user
-    #  @user.create_reset_digest
-    #  @user.send_password_reset_email
-    #  flash[:info] = "Email enviado con instrucciones para desempaquetar password"
-    #  redirect_to root_url
-    #else
-    #  flash.now[:danger] = "Dirección de email no existe"
-    #  render 'new'
-    #end
   end
 
   
@@ -37,8 +27,10 @@ class PasswordResetsController < ApplicationController
     @user.password = params[:password]
 
     if @user.save
-      flash[:success] = "Your password was successfully updated"
-      redirect_to @user
+      flash[:success] = "Hemos cambiado su password exitosamente."
+      #redirect_to @user
+      log_in @user
+      redirect_to root_path
     else
       render :edit
     end
@@ -47,12 +39,11 @@ class PasswordResetsController < ApplicationController
   private
   
   def load_user_using_perishable_token
-    @user = User.where(perishable_token: params[:token]).first
+    @user = User.where(perishable_token: params[:token])
     unless @user
-      flash[:error] = "We're sorry, but we could not locate your account"
+      flash[:error] = "Perdone, no podemos encontrar su cuenta."
       redirect_to root_url
     end
   end
     
-   
 end
