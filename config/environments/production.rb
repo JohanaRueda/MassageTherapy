@@ -91,17 +91,22 @@ Rails.application.configure do
   
   
   #EMAIL
-  host = 'localhost:3000' # Local server
+  #host = 'localhost:3000' # Local server
   #config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.default_url_options = {host: 'massagebgalhouse.herokuapp.com' }
+  
   #config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
    :address              => "smtp.gmail.com",
    :port                 => 587,
-   :user_name            => ENV['gmail_username'],
-   :password             => ENV['gmail_password'],
+   #:user_name            => ENV['gmail_username'],
+   #:password             => ENV['gmail_password'],
+   :user_name             => "massagebgalhouse@gmail.com",
+   :password              => "671massageTherapy",
    :authentication       => "plain",
-   :enable_starttls_auto => true
+   :enable_starttls_auto => true,
+   :openssl_verify_mode  => 'none'
   }
   
 end

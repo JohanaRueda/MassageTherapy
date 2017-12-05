@@ -10,6 +10,7 @@ class Contact < MailForm::Base
       :subject => "My Contact Form",
       :to => "massagebgalhouse@gmail.com",
       :from => %("#{name}" <#{email}>)
+      
     }
   end
 end
