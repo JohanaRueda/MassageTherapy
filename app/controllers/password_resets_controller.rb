@@ -31,7 +31,7 @@ class PasswordResetsController < ApplicationController
       if @user.save
         flash[:success] = "Hemos cambiado su password exitosamente."
         #redirect_to @user
-        log_in @user
+        #log_in @user
         redirect_to root_path
       else
         render :edit
