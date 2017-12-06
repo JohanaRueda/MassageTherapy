@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
   #resources :password_resets, only: [:new, :create, :edit, :update]
   resources :password_resets, only: [ :new, :create]
-  get '/password_resets/edit' => 'password_resets#edit', as: :edit_password_reset
+  get '/password_resets/' => 'password_resets#edit', as: :edit_password_reset
   put '/password_resets/' => 'password_resets#update', as: :password_reset
 
   get '/home', to: 'static_pages#home'
