@@ -22,20 +22,16 @@ class PasswordResetsController < ApplicationController
 
   
   def update
-    load_user_using_perishable_token
-    if @user
-      @user.password = params[:password]
-      if @user.save
-        flash[:success] = "Hemos cambiado su password exitosamente."
-        redirect_to @user
-      else
-        render :edit
-      end
+    #load_user_using_perishable_token
+    @user = User.where(perishable_token: params[:token]).first
+    @user.password = params[:password]
+
+    if @user.save
+      flash[:success] = "Your password was successfully updated"
+      redirect_to @user
     else
-      flash[:error] = "Perdone, no podemos encontrar su cuenta (DEBUG)."
-      redirect_to root_url
+      render :edit
     end
-    
   end
   
   private
@@ -44,7 +40,7 @@ class PasswordResetsController < ApplicationController
     @user = User.where(perishable_token: params[:token]).first
     unless @user
       flash[:error] = "Perdone, no podemos encontrar su cuenta."
-      #redirect_to root_path
+      redirect_to root_path
     end
   end
     
