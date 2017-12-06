@@ -30,6 +30,7 @@ class PasswordResetsController < ApplicationController
       flash[:success] = "Su password cambió existosamente"
       #redirect_to @user
       log_in @user
+      redirect_to root_url
     else
       render :edit
     end
@@ -41,7 +42,7 @@ class PasswordResetsController < ApplicationController
     @user = User.where(perishable_token: params[:token]).first
     unless @user
       flash[:error] = "Perdone, no podemos encontrar su cuenta."
-      redirect_to root_path
+      redirect_to root_url
     end
   end
     
