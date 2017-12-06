@@ -76,10 +76,7 @@ class User < ApplicationRecord
   end
   
   def deliver_password_reset_instructions
-    puts 'In Deliver Instructions'
     self.perishable_token = SecureRandom.hex(4)
-    puts self.perishable_token
-    puts self.name
     save(validate: false)
 
     PasswordResetNotifier.password_reset_instructions(self).deliver_now

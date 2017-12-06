@@ -32,7 +32,7 @@ class PasswordResetsController < ApplicationController
         render :edit
       end
     else
-      flash[:error] = "Perdone, no podemos encontrar su cuenta."
+      flash[:error] = "Perdone, no podemos encontrar su cuenta (DEBUG)."
       redirect_to root_url
     end
     
