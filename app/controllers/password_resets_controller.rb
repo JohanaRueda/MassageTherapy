@@ -30,7 +30,7 @@ class PasswordResetsController < ApplicationController
       flash[:success] = "Su password cambió existosamente"
       #redirect_to @user
       #log_in @user
-      rediect_to root_path
+      redirect_to root_path
     else
       render :edit
     end
