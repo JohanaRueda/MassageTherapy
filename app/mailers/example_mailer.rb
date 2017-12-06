@@ -4,6 +4,6 @@ class ExampleMailer < ActionMailer::Base
     def sample_email(user)
         @user = user
         @url  = 'https://massagebgalhouse.herokuapp.com/courses'
-        mail(to: @user.email, subject: 'Sample Email')
+        mail(to: @user.email, subject: '¡Bienvenido a MassageBGalHouse!')
     end
 end

@@ -13,7 +13,6 @@ class PasswordResetsController < ApplicationController
     if user
       user.deliver_password_reset_instructions
       flash[:notice] = "Email enviado con instrucciones para desempaquetar password"
-
       redirect_to root_path
     else
       flash.now[:error] = "Dirección de email no existe"
@@ -24,7 +23,6 @@ class PasswordResetsController < ApplicationController
   
   def update
     load_user_using_perishable_token
-    
     if @user
       @user.password = params[:password]
       if @user.save
@@ -46,7 +44,7 @@ class PasswordResetsController < ApplicationController
     @user = User.where(perishable_token: params[:token]).first
     unless @user
       flash[:error] = "Perdone, no podemos encontrar su cuenta."
-      redirect_to root_url
+      #redirect_to root_path
     end
   end
     

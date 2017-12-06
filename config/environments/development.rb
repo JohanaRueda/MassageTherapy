@@ -55,7 +55,8 @@ Rails.application.configure do
   #EMAIL
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :test
-  host = 'localhost:3000' # Local server
-  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  #host = 'localhost:3000' # Local server
+  host = 'massage-therapy-sjray32.c9users.io'
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   
 end

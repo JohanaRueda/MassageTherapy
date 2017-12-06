@@ -18,12 +18,12 @@
               <li><%= link_to "Profile", current_user %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to "Cerrar sesion", logout_path, method: :delete %>
+                <%= link_to "Cerrar sesión", logout_path, method: :delete %>
               </li>
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Iniciar sesion", login_path %></li>
+          <li><%= link_to "Iniciar sesión", login_path %></li>
         <% end %>
       </ul>
     </nav>
